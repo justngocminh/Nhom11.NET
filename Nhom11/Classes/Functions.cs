@@ -3,15 +3,15 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace Nhom11.Class
+namespace Nhom11.Classes
 {
-    class Funtions
+    class Functions
     {
         public static SqlConnection conn;
         public static string connstring;
         public static void Connect()
         {
-            connstring = "";
+            connstring = "Data Source=DESKTOP-297FAMM\\SQLEXPRESS;Initial Catalog=Nhom11;Integrated Security=True;"; //connstring của ngọc minh
             conn = new SqlConnection(connstring);
             conn.Open();
         }
@@ -26,14 +26,14 @@ namespace Nhom11.Class
         }
         public static DataTable GetDataToTable(string sql)
         {
-            SqlDataAdapter mydata = new SqlDataAdapter(sql, Funtions.conn);
+            SqlDataAdapter mydata = new SqlDataAdapter(sql, Functions.conn);
             DataTable table = new DataTable();
             mydata.Fill(table);
             return table;
         }
         public static void FillComboBox(string sql, ComboBox cbo, string ma, string ten)
         {
-            SqlDataAdapter mydata = new SqlDataAdapter(sql, Funtions.conn);
+            SqlDataAdapter mydata = new SqlDataAdapter(sql, Functions.conn);
             DataTable table = new DataTable();
             mydata.Fill(table);
             cbo.DataSource = table;
@@ -43,7 +43,7 @@ namespace Nhom11.Class
         public static string GetFielbValues(string sql)
         {
             string ma = "";
-            SqlCommand cmd = new SqlCommand(sql, Funtions.conn);
+            SqlCommand cmd = new SqlCommand(sql, Functions.conn);
             SqlDataReader reader;
             reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -55,7 +55,7 @@ namespace Nhom11.Class
         }
         public static bool CheckKey(string sql)
         {
-            SqlDataAdapter mydata = new SqlDataAdapter(sql, Funtions.conn);
+            SqlDataAdapter mydata = new SqlDataAdapter(sql, Functions.conn);
             DataTable table = new DataTable();
             mydata.Fill(table);
             if (table.Rows.Count > 0)
@@ -68,7 +68,7 @@ namespace Nhom11.Class
         {
             SqlCommand cmd;
             cmd = new SqlCommand();
-            cmd.Connection = Class.Funtions.conn;
+            cmd.Connection = Classes.Functions.conn;
             cmd.CommandText = sql;
             try
             {
