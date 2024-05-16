@@ -24,14 +24,18 @@ namespace Nhom11.Forms
             sql = "select * from tblPhongban";
             table = Classes.Functions.GetDataToTable(sql);
             dataGridView1.DataSource = table;
-            // Tự động điều chỉnh độ rộng cột
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            //
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridView1.Columns[0].HeaderText = "Mã phòng ban";
             dataGridView1.Columns[1].HeaderText = "Tên phòng ban";
             dataGridView1.Columns[2].HeaderText = "Số điện thoại";
+            dataGridView1.Columns[0].Width = 120;
+            dataGridView1.Columns[1].Width = 120;
+            //dataGridView1.Columns[2].Width = 150;
+            //dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -78,6 +82,16 @@ namespace Nhom11.Forms
                 MessageBox.Show("Vui lòng nhập đúng số điện thoại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (txtMaphongban.Text.Trim().Length > 10)
+            {
+                MessageBox.Show("Mã phong ban không được vượt quá 10 ký tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtMaphongban.Text.Trim().Length > 50)
+            {
+                MessageBox.Show("Tên phòng ban không được vượt quá 50 ký tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string phonenum = txtDienthoai.Text.Trim();
             phonenum = phonenum.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
             sql = "update tblPhongban set Tenphongban = N'" + txtTenphongban.Text.Trim().ToString() + "', Dienthoai = N'" + phonenum + "'where Maphongban = N'" + txtMaphongban.Text + "'";
@@ -86,7 +100,6 @@ namespace Nhom11.Forms
             ResetValues();
             btnBoqua.Enabled = false;
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string sql;
@@ -136,6 +149,20 @@ namespace Nhom11.Forms
                 MessageBox.Show("Mã phòng ban này đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtMaphongban.Focus();
                 txtMaphongban.Text = "";
+                return;
+            }
+            if (txtMaphongban.Text.Trim().Length > 10)
+            {
+                MessageBox.Show("Mã phong ban không được vượt quá 10 ký tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMaphongban.Focus();
+                txtMaphongban.Text = "";
+                return;
+            }
+            if (txtMaphongban.Text.Trim().Length > 50)
+            {
+                MessageBox.Show("Tên phòng ban không được vượt quá 50 ký tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenphongban.Focus();
+                txtTenphongban.Text = "";
                 return;
             }
             string phonenum = txtDienthoai.Text.Trim();
