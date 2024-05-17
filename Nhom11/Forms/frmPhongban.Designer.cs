@@ -45,6 +45,7 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.txtDienthoai = new System.Windows.Forms.MaskedTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,6 +210,15 @@
             this.txtDienthoai.Size = new System.Drawing.Size(148, 26);
             this.txtDienthoai.TabIndex = 23;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(108, 129);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(401, 188);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin phòng ban";
+            // 
             // frmPhongban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -228,6 +238,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmPhongban";
             this.Text = "frmPhongban";
@@ -254,5 +265,6 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.MaskedTextBox txtDienthoai;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

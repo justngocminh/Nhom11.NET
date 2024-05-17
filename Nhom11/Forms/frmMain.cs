@@ -21,5 +21,11 @@ namespace Nhom11
             frmPhongban form = new frmPhongban();
             form.Show();
         }
+
+        private void báoCáoDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaocaodoanhthu form = new frmBaocaodoanhthu();
+            form.Show();
+        }
     }
 }

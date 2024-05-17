@@ -26,16 +26,13 @@ namespace Nhom11.Forms
             dataGridView1.DataSource = table;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.Columns[0].HeaderText = "Mã phòng ban";
             dataGridView1.Columns[1].HeaderText = "Tên phòng ban";
             dataGridView1.Columns[2].HeaderText = "Số điện thoại";
             dataGridView1.Columns[0].Width = 120;
             dataGridView1.Columns[1].Width = 120;
-            //dataGridView1.Columns[2].Width = 150;
-            //dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
