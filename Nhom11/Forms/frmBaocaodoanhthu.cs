@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -45,13 +46,14 @@ namespace Nhom11.Forms
         private void frmBaocaodoanhthu_Load(object sender, EventArgs e)
         {
             string sql = "select * from Baocaodoanhthu";
+            txtMahopdong.Focus();
             txtTheongay.Enabled = false;
             txtTungay.Enabled = false;
             txtDenngay.Enabled = false;
             Load_DataGridView(sql);
             SetupColumnChart();
             lbTongdoanhthuso.Text += " " + CalculateColumnTotal(dataGridView1, 6) + " nghìn đồng";
-            lbTongdoanhthuchu.Text += " " + NumberToWords((long)CalculateColumnTotal(dataGridView1, 6)) + " đồng";
+            lbTongdoanhthuchu.Text += " " + NumberConverter.NumberToWords((long)CalculateColumnTotal(dataGridView1, 6)) + " đồng";
         }
         private void SetupColumnChart()
         {
@@ -97,6 +99,43 @@ namespace Nhom11.Forms
             txtDenngay.Enabled = true;
         }
 
+        //Sử dụng nút enter để kích hoạt tra cứu
+        private void txtMahopdong_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnTracuu.PerformClick();
+            }
+        }
+
+        private void txtTenkhachhang_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnTracuu.PerformClick();
+            }
+        }
+
+        private void txtTennhanvien_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnTracuu.PerformClick();
+            }
+        }
+        private void txtDenngay_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnTracuu.PerformClick();
+            }
+        }
+
+
+        // Thiết lập nút Tra cứu
         private void btnTracuu_Click(object sender, EventArgs e)
         {
             string sql = "select * from Baocaodoanhthu where 1 = 1";
@@ -130,6 +169,8 @@ namespace Nhom11.Forms
             }
             if (rdoTrongkhoang.Checked)
             {
+                int compare = DateTime.Compare(DateTime.Parse(txtDenngay.Text), DateTime.Parse(txtTungay.Text));
+
                 if (!Classes.Functions.IsDate(txtTungay.Text.Trim()))
                 {
                     MessageBox.Show("Ngày bắt đầu không hợp lệ. Vui lòng nhập đúng định dạng ngày tháng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -138,6 +179,11 @@ namespace Nhom11.Forms
                 if (!Classes.Functions.IsDate(txtDenngay.Text.Trim()))
                 {
                     MessageBox.Show("Ngày kết thúc không hợp lệ. Vui lòng nhập đúng định dạng ngày tháng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (compare < 0)
+                {
+                    MessageBox.Show("Ngày trong ô 'Đến ngày' phải lớn hơn ngày trong ô 'Từ ngày'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -164,7 +210,7 @@ namespace Nhom11.Forms
             Load_DataGridView(sql);
             SetupColumnChart();
             lbTongdoanhthuso.Text = "Tổng doanh thu bằng số: " + CalculateColumnTotal(dataGridView1, 6) + " nghìn đồng";
-            lbTongdoanhthuchu.Text = "Tổng doanh thu bằng chữ: " + NumberToWords((long)CalculateColumnTotal(dataGridView1, 6)) + " đồng";
+            lbTongdoanhthuchu.Text = "Tổng doanh thu bằng chữ: " + NumberConverter.NumberToWords((long)CalculateColumnTotal(dataGridView1, 6)) + " đồng";
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -174,11 +220,16 @@ namespace Nhom11.Forms
             txtTennhanvien.Text = "";
             txtMahopdong.Text = "";
             txtTheongay.Text = "";
+            txtTheongay.Enabled = false;
             txtTungay.Text = "";
+            txtTungay.Enabled = false;
             txtDenngay.Text = "";
+            txtDenngay.Enabled = false;
             rdoTheongay.Checked = false;
             rdoTrongkhoang.Checked = false;
+            txtMahopdong.Focus();
             Load_DataGridView(sql);
+            SetupColumnChart();
         }
 
         private void btnXuat_Click(object sender, EventArgs e)
@@ -199,6 +250,8 @@ namespace Nhom11.Forms
             }
             ExportToExcel(dataGridView1, filepath);
         }
+
+        // Tìm vị trí ô tổng doanh thu trong excel
         private decimal CalculateColumnTotal(DataGridView dataGridView, int columnIndex)
         {
             decimal total = 0;
@@ -216,59 +269,6 @@ namespace Nhom11.Forms
 
             return total;
         }
-        public string NumberToWords(long number)
-        {
-            if (number == 0)
-                return "Không";
-
-            if (number < 0)
-                return "Âm " + NumberToWords(Math.Abs(number));
-
-            string words = "";
-
-            if ((number / 1000000000) > 0)
-            {
-                words += NumberToWords(number / 1000000000) + " tỷ ";
-                number %= 1000000000;
-            }
-
-            if ((number / 1000000) > 0)
-            {
-                words += NumberToWords(number / 1000000) + " triệu ";
-                number %= 1000000;
-            }
-
-            if ((number / 1000) > 0)
-            {
-                words += NumberToWords(number / 1000) + " nghìn ";
-                number %= 1000;
-            }
-
-            if ((number / 100) > 0)
-            {
-                words += NumberToWords(number / 100) + " trăm ";
-                number %= 100;
-            }
-
-            if (number > 0)
-            {
-                if (words != "")
-                    words += "linh ";
-                var units = new[] { "", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười", "mười một", "mười hai", "mười ba", "mười bốn", "mười lăm", "mười sáu", "mười bảy", "mười tám", "mười chín" };
-                var tens = new[] { "", "mười", "hai mươi", "ba mươi", "bốn mươi", "năm mươi", "sáu mươi", "bảy mươi", "tám mươi", "chín mươi" };
-                if (number < 20)
-                    words += units[number];
-                else
-                {
-                    words += tens[number / 10];
-                    if ((number % 10) > 0)
-                        words += " " + units[number % 10];
-                }
-            }
-
-            return words;
-        }
-
 
         private void ExportToExcel(DataGridView datagridview, string filepath)
         {
@@ -350,6 +350,114 @@ namespace Nhom11.Forms
             {
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
+        }
+    }
+
+    // Chuyển số thành chữ
+    public class NumberConverter
+    {
+        private static readonly string[] Units = { "", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín" };
+        private static readonly string[] Tens = { "", "mười", "hai mươi", "ba mươi", "bốn mươi", "năm mươi", "sáu mươi", "bảy mươi", "tám mươi", "chín mươi" };
+        private static readonly string[] Hundreds = { "", "một trăm", "hai trăm", "ba trăm", "bốn trăm", "năm trăm", "sáu trăm", "bảy trăm", "tám trăm", "chín trăm" };
+        private static readonly string[] BigNumbers = { "", "nghìn", "triệu", "tỷ" };
+
+        private static string ConvertThreeDigitNumber(int number)
+        {
+            int hundred = number / 100;
+            int ten = (number % 100) / 10;
+            int unit = number % 10;
+
+            StringBuilder result = new StringBuilder();
+
+            if (hundred > 0)
+            {
+                result.Append(Hundreds[hundred]);
+            }
+
+            if (ten == 0 && unit > 0)
+            {
+                if (hundred > 0)
+                {
+                    result.Append(" linh");
+                }
+                result.Append(" ").Append(Units[unit]);
+            }
+            else
+            {
+                if (ten > 0)
+                {
+                    if (hundred > 0)
+                    {
+                        result.Append(" ");
+                    }
+                    result.Append(Tens[ten]);
+                }
+
+                if (unit > 0)
+                {
+                    if (hundred > 0 || ten > 0)
+                    {
+                        result.Append(" ");
+                    }
+                    if (ten == 1 && unit == 1)
+                    {
+                        result.Append("một");
+                    }
+                    else if (ten > 1 && unit == 5)
+                    {
+                        result.Append("lăm");
+                    }
+                    else
+                    {
+                        result.Append(Units[unit]);
+                    }
+                }
+            }
+
+            return result.ToString().Trim();
+        }
+
+        private static string ConvertNumberToWords(long number)
+        {
+            if (number == 0)
+            {
+                return "không";
+            }
+
+            StringBuilder result = new StringBuilder();
+
+            int[] groups = new int[4];
+            int groupIndex = 0;
+
+            while (number > 0)
+            {
+                groups[groupIndex] = (int)(number % 1000);
+                number /= 1000;
+                groupIndex++;
+            }
+
+            for (int i = groupIndex - 1; i >= 0; i--)
+            {
+                if (groups[i] > 0)
+                {
+                    if (result.Length > 0)
+                    {
+                        result.Append(" ");
+                    }
+                    result.Append(ConvertThreeDigitNumber(groups[i]));
+                    if (i > 0)
+                    {
+                        result.Append(" ").Append(BigNumbers[i]);
+                    }
+                }
+            }
+
+            return result.ToString().Trim();
+        }
+
+        public static string NumberToWords(long number)
+        {
+            return ConvertNumberToWords(number);
         }
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.txtTenkhachhang = new System.Windows.Forms.TextBox();
@@ -81,6 +81,7 @@
             this.txtTenkhachhang.Name = "txtTenkhachhang";
             this.txtTenkhachhang.Size = new System.Drawing.Size(100, 20);
             this.txtTenkhachhang.TabIndex = 30;
+            this.txtTenkhachhang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenkhachhang_KeyDown);
             // 
             // label2
             // 
@@ -123,6 +124,7 @@
             this.txtTennhanvien.Name = "txtTennhanvien";
             this.txtTennhanvien.Size = new System.Drawing.Size(100, 20);
             this.txtTennhanvien.TabIndex = 53;
+            this.txtTennhanvien.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTennhanvien_KeyDown);
             // 
             // label5
             // 
@@ -139,6 +141,7 @@
             this.txtMahopdong.Name = "txtMahopdong";
             this.txtMahopdong.Size = new System.Drawing.Size(100, 20);
             this.txtMahopdong.TabIndex = 51;
+            this.txtMahopdong.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMahopdong_KeyDown);
             // 
             // label3
             // 
@@ -189,6 +192,7 @@
             this.txtDenngay.Size = new System.Drawing.Size(103, 20);
             this.txtDenngay.TabIndex = 46;
             this.txtDenngay.ValidatingType = typeof(System.DateTime);
+            this.txtDenngay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDenngay_KeyDown);
             // 
             // label1
             // 
@@ -279,7 +283,7 @@
             // 
             // btnXuat
             // 
-            this.btnXuat.Location = new System.Drawing.Point(502, 398);
+            this.btnXuat.Location = new System.Drawing.Point(515, 405);
             this.btnXuat.Margin = new System.Windows.Forms.Padding(2);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(102, 24);
@@ -312,17 +316,17 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(806, 226);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(358, 232);
             this.chart1.TabIndex = 51;
             this.chart1.Text = "chart1";
@@ -340,7 +344,7 @@
             this.Controls.Add(this.label4);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmBaocaodoanhthu";
-            this.Text = "frmBaocaodoanhthu";
+            this.Text = "Báo cáo doanh thu";
             this.Load += new System.EventHandler(this.frmBaocaodoanhthu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
