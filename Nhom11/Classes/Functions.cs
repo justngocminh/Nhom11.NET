@@ -11,8 +11,8 @@ namespace Nhom11.Classes
         public static string connstring;
         public static void Connect()
         {
-            connstring = "Data Source=NGOCMINHS-DESKT\\SQLEXPRESS;Initial Catalog=Nhom11;Integrated Security=True;"; //constring của ngọc minh laptop
-            //connstring = "Data Source=DESKTOP-297FAMM\\SQLEXPRESS;Initial Catalog=Nhom11;Integrated Security=True;"; //connstring của ngọc minh pc
+            //connstring = "Data Source=NGOCMINHS-DESKT\\SQLEXPRESS;Initial Catalog=Nhom11;Integrated Security=True;"; //constring của ngọc minh laptop
+            connstring = "Data Source=DESKTOP-297FAMM\\SQLEXPRESS;Initial Catalog=Nhom11;Integrated Security=True;"; //connstring của ngọc minh pc
             conn = new SqlConnection(connstring);
             conn.Open();
         }
