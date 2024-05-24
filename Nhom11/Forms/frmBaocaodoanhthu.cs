@@ -13,7 +13,7 @@ namespace Nhom11.Forms
         public frmBaocaodoanhthu()
         {
             InitializeComponent();
-            this.Size = new Size(1195, 546);
+            this.Size = new Size(1145, 575);
         }
 
         private void Load_DataGridView(string sql)
@@ -32,15 +32,15 @@ namespace Nhom11.Forms
             dataGridView1.Columns[6].HeaderText = "Tổng tiền";
 
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-            //dataGridView1.Columns[0].Width = 120;
-            //dataGridView1.Columns[1].Width = 120;
-            //dataGridView1.Columns[2].Width = 120;
-            //dataGridView1.Columns[3].Width = 120;
-            //dataGridView1.Columns[4].Width = 120;
-            //dataGridView1.Columns[5].Width = 120;
-            //dataGridView1.Columns[6].Width = 120;
+            dataGridView1.Columns[0].Width = 120;
+            dataGridView1.Columns[1].Width = 120;
+            dataGridView1.Columns[2].Width = 120;
+            dataGridView1.Columns[3].Width = 120;
+            dataGridView1.Columns[4].Width = 120;
+            dataGridView1.Columns[5].Width = 120;
+            dataGridView1.Columns[6].Width = 120;
 
             if (table.Rows.Count == 0)
             {
@@ -55,7 +55,6 @@ namespace Nhom11.Forms
         private void frmBaocaodoanhthu_Load(object sender, EventArgs e)
         {
             string sql = "select * from Baocaodoanhthu";
-            txtMahopdong.Focus();
             txtTheongay.Enabled = false;
             txtTungay.Enabled = false;
             txtDenngay.Enabled = false;
@@ -142,7 +141,13 @@ namespace Nhom11.Forms
                 btnTracuu.PerformClick();
             }
         }
-
+        private void txtTheongay_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnTracuu.PerformClick();
+            }
+        }
 
         // Thiết lập nút Tra cứu
         private void btnTracuu_Click(object sender, EventArgs e)
@@ -170,7 +175,7 @@ namespace Nhom11.Forms
             }
             if (rdoTheongay.Checked)
             {
-                if (!Classes.Functions.IsDate(txtTheongay.Text.Trim()))
+                if (!Classes.Functions.IsValidDate(txtTheongay.Text.Trim()))
                 {
                     MessageBox.Show("Ngày tra cứu không hợp lệ. Vui lòng nhập đúng định dạng ngày tháng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -180,12 +185,12 @@ namespace Nhom11.Forms
             {
                 int compare = DateTime.Compare(DateTime.Parse(txtDenngay.Text), DateTime.Parse(txtTungay.Text));
 
-                if (!Classes.Functions.IsDate(txtTungay.Text.Trim()))
+                if (!Classes.Functions.IsValidDate(txtTungay.Text.Trim()))
                 {
                     MessageBox.Show("Ngày bắt đầu không hợp lệ. Vui lòng nhập đúng định dạng ngày tháng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (!Classes.Functions.IsDate(txtDenngay.Text.Trim()))
+                if (!Classes.Functions.IsValidDate(txtDenngay.Text.Trim()))
                 {
                     MessageBox.Show("Ngày kết thúc không hợp lệ. Vui lòng nhập đúng định dạng ngày tháng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -228,14 +233,14 @@ namespace Nhom11.Forms
             txtTenkhachhang.Text = "";
             txtTennhanvien.Text = "";
             txtMahopdong.Text = "";
+            rdoTheongay.Checked = false;
+            rdoTrongkhoang.Checked = false;
             txtTheongay.Text = "";
             txtTheongay.Enabled = false;
             txtTungay.Text = "";
             txtTungay.Enabled = false;
             txtDenngay.Text = "";
             txtDenngay.Enabled = false;
-            rdoTheongay.Checked = false;
-            rdoTrongkhoang.Checked = false;
             txtMahopdong.Focus();
             Load_DataGridView(sql);
             SetupColumnChart();

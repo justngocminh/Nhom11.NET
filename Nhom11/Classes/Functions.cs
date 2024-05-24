@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 
@@ -12,7 +13,7 @@ namespace Nhom11.Classes
         public static string connstring;
         public static void Connect()
         {
-            //connstring = "Data Source=NGOCMINHS-DESKT\\SQLEXPRESS;Initial Catalog=Nhom11;Integrated Security=True;"; //constring của ngọc minh laptop
+            //connstring = "Data Source=NGOCMINHS-DEsKT\\SQLEXPRESS;Initial Catalog=Nhom11;Integrated Security=True;"; //constring của ngọc minh laptop
             connstring = "Data Source=DESKTOP-297FAMM\\SQLEXPRESS;Initial Catalog=Nhom11;Integrated Security=True;"; //connstring của ngọc minh pc
             conn = new SqlConnection(connstring);
             conn.Open();
@@ -83,7 +84,22 @@ namespace Nhom11.Classes
             cmd.Dispose();
             cmd = null;
         }
-        // Kiểm tra xem ngày tháng nhập vào có hợp lệ không, không quá chính xác với tháng 2
+        // Kiểm tra xem ngày tháng nhập vào có hợp lệ không - hàm này đầy đủ và đúng hơn
+        public static bool IsValidDate(string dateString)
+        {
+            string dateFormat = "dd/MM/yyyy";
+            DateTime dateValue;
+            bool isValid = DateTime.TryParseExact(
+                dateString,
+                dateFormat,
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out dateValue
+            );
+
+            return isValid;
+        }
+        // Hàm cũ - không chính xác
         public static bool IsDate(string d)
         {
             string[] parts = d.Split('/');
