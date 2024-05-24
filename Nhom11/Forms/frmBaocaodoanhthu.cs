@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -16,13 +15,14 @@ namespace Nhom11.Forms
             InitializeComponent();
             this.Size = new Size(1195, 546);
         }
+
         private void Load_DataGridView(string sql)
         {
             table = Classes.Functions.GetDataToTable(sql);
             dataGridView1.DataSource = table;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
             dataGridView1.Columns[0].HeaderText = "Mã hợp đồng";
             dataGridView1.Columns[1].HeaderText = "Tên khách hàng";
             dataGridView1.Columns[2].HeaderText = "Tên nhân viên";
@@ -30,19 +30,28 @@ namespace Nhom11.Forms
             dataGridView1.Columns[4].HeaderText = "Ngày bắt đầu";
             dataGridView1.Columns[5].HeaderText = "Ngày kết thúc";
             dataGridView1.Columns[6].HeaderText = "Tổng tiền";
-            dataGridView1.Columns[0].Width = 120;
-            dataGridView1.Columns[1].Width = 120;
-            dataGridView1.Columns[2].Width = 120;
-            dataGridView1.Columns[3].Width = 120;
-            dataGridView1.Columns[4].Width = 120;
-            dataGridView1.Columns[5].Width = 120;
-            dataGridView1.Columns[6].Width = 120;
+
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            //dataGridView1.Columns[0].Width = 120;
+            //dataGridView1.Columns[1].Width = 120;
+            //dataGridView1.Columns[2].Width = 120;
+            //dataGridView1.Columns[3].Width = 120;
+            //dataGridView1.Columns[4].Width = 120;
+            //dataGridView1.Columns[5].Width = 120;
+            //dataGridView1.Columns[6].Width = 120;
+
             if (table.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
+        private void dataGridView1_SizeChanged(object sender, EventArgs e)
+        {
+            Classes.Functions.ChangeColumnsSize(dataGridView1);
+        }
         private void frmBaocaodoanhthu_Load(object sender, EventArgs e)
         {
             string sql = "select * from Baocaodoanhthu";
@@ -53,7 +62,7 @@ namespace Nhom11.Forms
             Load_DataGridView(sql);
             SetupColumnChart();
             lbTongdoanhthuso.Text += " " + CalculateColumnTotal(dataGridView1, 6) + " nghìn đồng";
-            lbTongdoanhthuchu.Text += " " + NumberConverter.NumberToWords((long)CalculateColumnTotal(dataGridView1, 6)) + " đồng";
+            lbTongdoanhthuchu.Text += " " + Classes.Functions.ConvertNumberToWords((long)CalculateColumnTotal(dataGridView1, 6)) + " đồng";
         }
         private void SetupColumnChart()
         {
@@ -210,7 +219,7 @@ namespace Nhom11.Forms
             Load_DataGridView(sql);
             SetupColumnChart();
             lbTongdoanhthuso.Text = "Tổng doanh thu bằng số: " + CalculateColumnTotal(dataGridView1, 6) + " nghìn đồng";
-            lbTongdoanhthuchu.Text = "Tổng doanh thu bằng chữ: " + NumberConverter.NumberToWords((long)CalculateColumnTotal(dataGridView1, 6)) + " đồng";
+            lbTongdoanhthuchu.Text = "Tổng doanh thu bằng chữ: " + Classes.Functions.ConvertNumberToWords((long)CalculateColumnTotal(dataGridView1, 6)) + " đồng";
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -274,17 +283,13 @@ namespace Nhom11.Forms
         {
             try
             {
-                // Khởi tạo một ứng dụng Excel mới
                 Excel.Application excelApp = new Excel.Application();
-                excelApp.Visible = true; // Hiển thị ứng dụng Excel
+                excelApp.Visible = true;
 
-                // Tạo một Workbook mới
                 Excel.Workbook workbook = excelApp.Workbooks.Add(System.Reflection.Missing.Value);
 
-                // Tạo một Worksheet mới
                 Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
 
-                // Đặt tiêu đề cho báo cáo
                 worksheet.Cells[1, 1] = "Báo Cáo Doanh Thu";
                 Excel.Range titleRange = worksheet.Range["A1", "G1"];
                 titleRange.Merge();
@@ -292,7 +297,6 @@ namespace Nhom11.Forms
                 titleRange.Font.Bold = true;
                 titleRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
 
-                // Đặt tiêu đề cho các cột từ DataGridView
                 for (int i = 0; i < datagridview.Columns.Count; i++)
                 {
                     worksheet.Cells[2, i + 1] = datagridview.Columns[i].HeaderText;
@@ -300,7 +304,6 @@ namespace Nhom11.Forms
                     worksheet.Cells[2, i + 1].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
                 }
 
-                // Sao chép dữ liệu từ DataGridView sang Excel
                 for (int i = 0; i < datagridview.Rows.Count; i++)
                 {
                     for (int j = 0; j < datagridview.Columns.Count; j++)
@@ -321,7 +324,6 @@ namespace Nhom11.Forms
                     }
                 }
 
-                // Thêm công thức tính tổng vào cột "Tổng tiền" (giả định cột này có index là 7)
                 int totalRow = datagridview.Rows.Count + 3;
                 worksheet.Cells[totalRow, 6] = "Tổng tiền: ";
                 worksheet.Cells[totalRow, 6].Font.Bold = true;
@@ -330,10 +332,8 @@ namespace Nhom11.Forms
                 worksheet.Cells[totalRow, 7].Font.Bold = true;
                 worksheet.Cells[totalRow, 7].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightYellow);
 
-                // AutoFit cột để điều chỉnh độ rộng dựa trên nội dung
                 worksheet.Columns.AutoFit();
 
-                // Lưu Workbook vào một tệp Excel
                 workbook.SaveAs("" + filepath);
 
                 // Đóng Workbook và ứng dụng Excel
@@ -351,113 +351,9 @@ namespace Nhom11.Forms
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }
-    }
-
-    // Chuyển số thành chữ
-    public class NumberConverter
-    {
-        private static readonly string[] Units = { "", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín" };
-        private static readonly string[] Tens = { "", "mười", "hai mươi", "ba mươi", "bốn mươi", "năm mươi", "sáu mươi", "bảy mươi", "tám mươi", "chín mươi" };
-        private static readonly string[] Hundreds = { "", "một trăm", "hai trăm", "ba trăm", "bốn trăm", "năm trăm", "sáu trăm", "bảy trăm", "tám trăm", "chín trăm" };
-        private static readonly string[] BigNumbers = { "", "nghìn", "triệu", "tỷ" };
-
-        private static string ConvertThreeDigitNumber(int number)
+        private void btnDong_Click(object sender, EventArgs e)
         {
-            int hundred = number / 100;
-            int ten = (number % 100) / 10;
-            int unit = number % 10;
-
-            StringBuilder result = new StringBuilder();
-
-            if (hundred > 0)
-            {
-                result.Append(Hundreds[hundred]);
-            }
-
-            if (ten == 0 && unit > 0)
-            {
-                if (hundred > 0)
-                {
-                    result.Append(" linh");
-                }
-                result.Append(" ").Append(Units[unit]);
-            }
-            else
-            {
-                if (ten > 0)
-                {
-                    if (hundred > 0)
-                    {
-                        result.Append(" ");
-                    }
-                    result.Append(Tens[ten]);
-                }
-
-                if (unit > 0)
-                {
-                    if (hundred > 0 || ten > 0)
-                    {
-                        result.Append(" ");
-                    }
-                    if (ten == 1 && unit == 1)
-                    {
-                        result.Append("một");
-                    }
-                    else if (ten > 1 && unit == 5)
-                    {
-                        result.Append("lăm");
-                    }
-                    else
-                    {
-                        result.Append(Units[unit]);
-                    }
-                }
-            }
-
-            return result.ToString().Trim();
-        }
-
-        private static string ConvertNumberToWords(long number)
-        {
-            if (number == 0)
-            {
-                return "không";
-            }
-
-            StringBuilder result = new StringBuilder();
-
-            int[] groups = new int[4];
-            int groupIndex = 0;
-
-            while (number > 0)
-            {
-                groups[groupIndex] = (int)(number % 1000);
-                number /= 1000;
-                groupIndex++;
-            }
-
-            for (int i = groupIndex - 1; i >= 0; i--)
-            {
-                if (groups[i] > 0)
-                {
-                    if (result.Length > 0)
-                    {
-                        result.Append(" ");
-                    }
-                    result.Append(ConvertThreeDigitNumber(groups[i]));
-                    if (i > 0)
-                    {
-                        result.Append(" ").Append(BigNumbers[i]);
-                    }
-                }
-            }
-
-            return result.ToString().Trim();
-        }
-
-        public static string NumberToWords(long number)
-        {
-            return ConvertNumberToWords(number);
+            this.Close();
         }
     }
 }

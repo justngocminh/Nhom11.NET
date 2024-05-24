@@ -57,6 +57,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbTongdoanhthuchu = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnDong = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -67,6 +69,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(341, 21);
@@ -77,10 +80,12 @@
             // 
             // txtTenkhachhang
             // 
+            this.txtTenkhachhang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenkhachhang.Location = new System.Drawing.Point(130, 55);
             this.txtTenkhachhang.Name = "txtTenkhachhang";
             this.txtTenkhachhang.Size = new System.Drawing.Size(100, 20);
-            this.txtTenkhachhang.TabIndex = 30;
+            this.txtTenkhachhang.TabIndex = 1;
             this.txtTenkhachhang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenkhachhang_KeyDown);
             // 
             // label2
@@ -94,6 +99,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txtTennhanvien);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtMahopdong);
@@ -114,16 +121,18 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(774, 122);
-            this.groupBox1.TabIndex = 32;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tra cứu thông tin";
             // 
             // txtTennhanvien
             // 
+            this.txtTennhanvien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTennhanvien.Location = new System.Drawing.Point(130, 83);
             this.txtTennhanvien.Name = "txtTennhanvien";
             this.txtTennhanvien.Size = new System.Drawing.Size(100, 20);
-            this.txtTennhanvien.TabIndex = 53;
+            this.txtTennhanvien.TabIndex = 2;
             this.txtTennhanvien.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTennhanvien_KeyDown);
             // 
             // label5
@@ -137,10 +146,12 @@
             // 
             // txtMahopdong
             // 
+            this.txtMahopdong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMahopdong.Location = new System.Drawing.Point(130, 27);
             this.txtMahopdong.Name = "txtMahopdong";
             this.txtMahopdong.Size = new System.Drawing.Size(100, 20);
-            this.txtMahopdong.TabIndex = 51;
+            this.txtMahopdong.TabIndex = 0;
             this.txtMahopdong.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMahopdong_KeyDown);
             // 
             // label3
@@ -154,6 +165,7 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHuy.Location = new System.Drawing.Point(527, 90);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
@@ -165,6 +177,7 @@
             // 
             // btnTracuu
             // 
+            this.btnTracuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTracuu.Location = new System.Drawing.Point(655, 90);
             this.btnTracuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnTracuu.Name = "btnTracuu";
@@ -176,6 +189,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(601, 58);
             this.label6.Name = "label6";
@@ -185,17 +199,19 @@
             // 
             // txtDenngay
             // 
+            this.txtDenngay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDenngay.Location = new System.Drawing.Point(655, 56);
             this.txtDenngay.Margin = new System.Windows.Forms.Padding(2);
             this.txtDenngay.Mask = "00/00/0000";
             this.txtDenngay.Name = "txtDenngay";
             this.txtDenngay.Size = new System.Drawing.Size(103, 20);
-            this.txtDenngay.TabIndex = 46;
+            this.txtDenngay.TabIndex = 5;
             this.txtDenngay.ValidatingType = typeof(System.DateTime);
             this.txtDenngay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDenngay_KeyDown);
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(431, 58);
             this.label1.Name = "label1";
@@ -205,26 +221,29 @@
             // 
             // txtTungay
             // 
+            this.txtTungay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTungay.Location = new System.Drawing.Point(486, 56);
             this.txtTungay.Margin = new System.Windows.Forms.Padding(2);
             this.txtTungay.Mask = "00/00/0000";
             this.txtTungay.Name = "txtTungay";
             this.txtTungay.Size = new System.Drawing.Size(103, 20);
-            this.txtTungay.TabIndex = 44;
+            this.txtTungay.TabIndex = 4;
             this.txtTungay.ValidatingType = typeof(System.DateTime);
             // 
             // txtTheongay
             // 
+            this.txtTheongay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTheongay.Location = new System.Drawing.Point(434, 23);
             this.txtTheongay.Margin = new System.Windows.Forms.Padding(2);
             this.txtTheongay.Mask = "00/00/0000";
             this.txtTheongay.Name = "txtTheongay";
             this.txtTheongay.Size = new System.Drawing.Size(103, 20);
-            this.txtTheongay.TabIndex = 43;
+            this.txtTheongay.TabIndex = 3;
             this.txtTheongay.ValidatingType = typeof(System.DateTime);
             // 
             // rdoTrongkhoang
             // 
+            this.rdoTrongkhoang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoTrongkhoang.AutoSize = true;
             this.rdoTrongkhoang.Location = new System.Drawing.Point(332, 57);
             this.rdoTrongkhoang.Margin = new System.Windows.Forms.Padding(2);
@@ -238,6 +257,7 @@
             // 
             // rdoTheongay
             // 
+            this.rdoTheongay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoTheongay.AutoSize = true;
             this.rdoTheongay.Location = new System.Drawing.Point(332, 23);
             this.rdoTheongay.Margin = new System.Windows.Forms.Padding(2);
@@ -260,6 +280,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(15, 226);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
@@ -272,6 +295,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(32, 25);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -280,9 +306,11 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(726, 122);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SizeChanged += new System.EventHandler(this.dataGridView1_SizeChanged);
             // 
             // btnXuat
             // 
+            this.btnXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnXuat.Location = new System.Drawing.Point(515, 405);
             this.btnXuat.Margin = new System.Windows.Forms.Padding(2);
             this.btnXuat.Name = "btnXuat";
@@ -294,6 +322,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox3.Controls.Add(this.lbTongdoanhthuchu);
             this.groupBox3.Controls.Add(this.lbTongdoanhthuso);
             this.groupBox3.Location = new System.Drawing.Point(15, 398);
@@ -316,11 +345,12 @@
             // 
             // chart1
             // 
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(806, 226);
+            this.chart1.Location = new System.Drawing.Point(810, 238);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
@@ -331,11 +361,35 @@
             this.chart1.TabIndex = 51;
             this.chart1.Text = "chart1";
             // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(947, 212);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(95, 13);
+            this.label7.TabIndex = 54;
+            this.label7.Text = "Biểu đồ doanh thu";
+            // 
+            // btnDong
+            // 
+            this.btnDong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDong.Location = new System.Drawing.Point(634, 405);
+            this.btnDong.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(102, 24);
+            this.btnDong.TabIndex = 55;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
+            // 
             // frmBaocaodoanhthu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 507);
+            this.Controls.Add(this.btnDong);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnXuat);
@@ -386,5 +440,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMahopdong;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnDong;
     }
 }

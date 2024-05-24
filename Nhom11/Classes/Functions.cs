@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Nhom11.Classes
@@ -91,12 +92,138 @@ namespace Nhom11.Classes
             else
                 return false;
         }
-        // Hàm format lại định dạng của ngày trong mask textbox trong trường hợp ngày tháng có định dạng "MM/dd/yyyy" nó sẽ chuyển về thành "dd/MM/yyyy"
+
         public static string ConvertDateTime(string d)
         {
             string[] parts = d.Split('/');
             string dt = String.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
             return dt;
         }
+
+        // Tự động điểu chỉnh độ rộng cột khi Datagridview có kích thước lớn hơn
+        public static void ChangeColumnsSize(DataGridView view)
+        {
+            int totalColumnWidth = 0;
+            foreach (DataGridViewColumn column in view.Columns)
+            {
+                totalColumnWidth += column.Width;
+            }
+
+            if (totalColumnWidth < view.Width)
+            {
+                foreach (DataGridViewColumn column in view.Columns)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            }
+            else
+            {
+                foreach (DataGridViewColumn column in view.Columns)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                }
+            }
+        }
+
+        // Hàm đổi số thành chữ
+        private static readonly string[] Units = { "", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín" };
+        private static readonly string[] Tens = { "", "mười", "hai mươi", "ba mươi", "bốn mươi", "năm mươi", "sáu mươi", "bảy mươi", "tám mươi", "chín mươi" };
+        private static readonly string[] Hundreds = { "", "một trăm", "hai trăm", "ba trăm", "bốn trăm", "năm trăm", "sáu trăm", "bảy trăm", "tám trăm", "chín trăm" };
+        private static readonly string[] BigNumbers = { "", "nghìn", "triệu", "tỷ" };
+
+        private static string ConvertThreeDigitNumber(int number)
+        {
+            int hundred = number / 100;
+            int ten = (number % 100) / 10;
+            int unit = number % 10;
+
+            StringBuilder result = new StringBuilder();
+
+            if (hundred > 0)
+            {
+                result.Append(Hundreds[hundred]);
+            }
+
+            if (ten == 0 && unit > 0)
+            {
+                if (hundred > 0)
+                {
+                    result.Append(" linh");
+                }
+                result.Append(" ").Append(Units[unit]);
+            }
+            else
+            {
+                if (ten > 0)
+                {
+                    if (hundred > 0)
+                    {
+                        result.Append(" ");
+                    }
+                    result.Append(Tens[ten]);
+                }
+
+                if (unit > 0)
+                {
+                    if (hundred > 0 || ten > 0)
+                    {
+                        result.Append(" ");
+                    }
+                    if (ten == 1 && unit == 1)
+                    {
+                        result.Append("một");
+                    }
+                    else if (ten > 1 && unit == 5)
+                    {
+                        result.Append("lăm");
+                    }
+                    else
+                    {
+                        result.Append(Units[unit]);
+                    }
+                }
+            }
+
+            return result.ToString().Trim();
+        }
+
+        public static string ConvertNumberToWords(long number)
+        {
+            if (number == 0)
+            {
+                return "không";
+            }
+
+            StringBuilder result = new StringBuilder();
+
+            int[] groups = new int[4];
+            int groupIndex = 0;
+
+            while (number > 0)
+            {
+                groups[groupIndex] = (int)(number % 1000);
+                number /= 1000;
+                groupIndex++;
+            }
+
+            for (int i = groupIndex - 1; i >= 0; i--)
+            {
+                if (groups[i] > 0)
+                {
+                    if (result.Length > 0)
+                    {
+                        result.Append(" ");
+                    }
+                    result.Append(ConvertThreeDigitNumber(groups[i]));
+                    if (i > 0)
+                    {
+                        result.Append(" ").Append(BigNumbers[i]);
+                    }
+                }
+            }
+
+            return result.ToString().Trim();
+        }
     }
 }
+
