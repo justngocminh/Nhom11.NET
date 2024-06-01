@@ -10,6 +10,7 @@ namespace Nhom11.Forms
         public frmPhongban()
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         private void frmPhongban_Load(object sender, EventArgs e)
         {
@@ -26,12 +27,13 @@ namespace Nhom11.Forms
             dataGridView1.DataSource = table;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
             dataGridView1.Columns[0].HeaderText = "Mã phòng ban";
             dataGridView1.Columns[1].HeaderText = "Tên phòng ban";
             dataGridView1.Columns[2].HeaderText = "Số điện thoại";
-            dataGridView1.Columns[0].Width = 120;
-            dataGridView1.Columns[1].Width = 120;
+
+            dataGridView1.Columns[0].Width = 100;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
         private void btnThem_Click(object sender, EventArgs e)

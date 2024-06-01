@@ -10,12 +10,16 @@ namespace Nhom11.Forms
     public partial class frmBaocaodoanhthu : Form
     {
         DataTable table;
+
+        // Thiết lập kích thước form
         public frmBaocaodoanhthu()
         {
             InitializeComponent();
-            this.Size = new Size(1145, 575);
+            Size = new Size(1145, 575);
+            MinimumSize = new Size(1145, 575);
         }
 
+        // Tải datagridview
         private void Load_DataGridView(string sql)
         {
             table = Classes.Functions.GetDataToTable(sql);
@@ -32,7 +36,6 @@ namespace Nhom11.Forms
             dataGridView1.Columns[6].HeaderText = "Tổng tiền";
 
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
             dataGridView1.Columns[0].Width = 120;
             dataGridView1.Columns[1].Width = 120;
@@ -48,10 +51,13 @@ namespace Nhom11.Forms
             }
         }
 
+        // Khi form thay đổi kích cỡ
         private void dataGridView1_SizeChanged(object sender, EventArgs e)
         {
             Classes.Functions.ChangeColumnsSize(dataGridView1);
         }
+
+        // Tải form
         private void frmBaocaodoanhthu_Load(object sender, EventArgs e)
         {
             string sql = "select * from Baocaodoanhthu";
@@ -63,36 +69,32 @@ namespace Nhom11.Forms
             lbTongdoanhthuso.Text += " " + CalculateColumnTotal(dataGridView1, 6) + " nghìn đồng";
             lbTongdoanhthuchu.Text += " " + Classes.Functions.ConvertNumberToWords((long)CalculateColumnTotal(dataGridView1, 6)) + " đồng";
         }
+
+        // Tải biểu đồ
         private void SetupColumnChart()
         {
-            // Xóa dữ liệu cũ trong biểu đồ (nếu có)
             chart1.Series.Clear();
 
-            // Tạo một chuỗi dữ liệu mới cho biểu đồ
             var series = new Series("Tổng tiền", (int)SeriesChartType.Column);
 
-            // Lặp qua các hàng trong DataGridView để thêm dữ liệu vào chuỗi dữ liệu của biểu đồ
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                // Kiểm tra xem dữ liệu trong cột "Tổng tiền" và "Ngày ký kết" có hợp lệ không
                 if (row.Cells[6].Value != null && row.Cells[6].Value.ToString() != "" &&
                     row.Cells[3].Value != null && row.Cells[3].Value.ToString() != "")
                 {
-                    // Thêm điểm dữ liệu vào chuỗi dữ liệu của biểu đồ
                     series.Points.AddXY(DateTime.Parse(row.Cells[3].Value.ToString()), Convert.ToDouble(row.Cells[6].Value));
                 }
             }
 
-            // Thêm chuỗi dữ liệu vào biểu đồ
             chart1.Series.Add(series);
 
-            // Đặt tiêu đề cho trục x và y
             chart1.ChartAreas[0].AxisX.Title = "Ngày ký kết";
             chart1.ChartAreas[0].AxisY.Title = "Tổng tiền";
 
-            // Cập nhật lại biểu đồ
             chart1.Update();
         }
+
+        // Chuyển đổi qua lại radio button
         private void rdoTheongay_CheckedChanged(object sender, EventArgs e)
         {
             txtTheongay.Enabled = true;
@@ -149,11 +151,11 @@ namespace Nhom11.Forms
             }
         }
 
-        // Thiết lập nút Tra cứu
+        // Nút tra cứu
         private void btnTracuu_Click(object sender, EventArgs e)
         {
             string sql = "select * from Baocaodoanhthu where 1 = 1";
-            if (txtMahopdong.Text.Trim() == "" && txtTenkhachhang.Text.Trim() == "" && txtTennhanvien.Text.Trim() == "" && txtMahopdong.Text.Trim() == "" && rdoTheongay.Checked == false && rdoTrongkhoang.Checked == false)
+            if (txtMahopdong.Text.Trim() == "" && txtTenkhachhang.Text.Trim() == "" && txtTennhanvien.Text.Trim() == "" && rdoTheongay.Checked == false && rdoTrongkhoang.Checked == false)
             {
                 MessageBox.Show("Hãy nhập ít nhất một thông tin để tra cứu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -227,6 +229,7 @@ namespace Nhom11.Forms
             lbTongdoanhthuchu.Text = "Tổng doanh thu bằng chữ: " + Classes.Functions.ConvertNumberToWords((long)CalculateColumnTotal(dataGridView1, 6)) + " đồng";
         }
 
+        // Nút hủy
         private void btnHuy_Click(object sender, EventArgs e)
         {
             string sql = "select * from Baocaodoanhthu";
@@ -246,6 +249,7 @@ namespace Nhom11.Forms
             SetupColumnChart();
         }
 
+        // Nút xuất
         private void btnXuat_Click(object sender, EventArgs e)
         {
             string filepath = "";
@@ -265,7 +269,7 @@ namespace Nhom11.Forms
             ExportToExcel(dataGridView1, filepath);
         }
 
-        // Tìm vị trí ô tổng doanh thu trong excel
+        // Tính tổng tiền
         private decimal CalculateColumnTotal(DataGridView dataGridView, int columnIndex)
         {
             decimal total = 0;
@@ -284,6 +288,7 @@ namespace Nhom11.Forms
             return total;
         }
 
+        // Xuất báo cáo excel
         private void ExportToExcel(DataGridView datagridview, string filepath)
         {
             try
@@ -356,6 +361,8 @@ namespace Nhom11.Forms
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }
+
+        // Nút đóng
         private void btnDong_Click(object sender, EventArgs e)
         {
             this.Close();

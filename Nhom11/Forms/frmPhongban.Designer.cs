@@ -137,7 +137,7 @@
             // btnBoqua
             // 
             this.btnBoqua.Location = new System.Drawing.Point(504, 384);
-            this.btnBoqua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBoqua.Margin = new System.Windows.Forms.Padding(2);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.Size = new System.Drawing.Size(63, 25);
             this.btnBoqua.TabIndex = 22;
@@ -148,7 +148,7 @@
             // btnLuu
             // 
             this.btnLuu.Location = new System.Drawing.Point(408, 384);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(63, 25);
             this.btnLuu.TabIndex = 21;
@@ -159,7 +159,7 @@
             // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(312, 384);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(63, 25);
             this.btnXoa.TabIndex = 20;
@@ -170,7 +170,7 @@
             // btnSua
             // 
             this.btnSua.Location = new System.Drawing.Point(216, 384);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(63, 25);
             this.btnSua.TabIndex = 19;
@@ -181,7 +181,7 @@
             // btnThoat
             // 
             this.btnThoat.Location = new System.Drawing.Point(600, 384);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(63, 25);
             this.btnThoat.TabIndex = 18;
@@ -192,7 +192,7 @@
             // btnThem
             // 
             this.btnThem.Location = new System.Drawing.Point(120, 384);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(63, 25);
             this.btnThem.TabIndex = 17;
@@ -211,9 +211,9 @@
             // groupBox1
             // 
             this.groupBox1.Location = new System.Drawing.Point(72, 84);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(267, 122);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;

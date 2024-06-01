@@ -27,5 +27,17 @@ namespace Nhom11
             frmBaocaodoanhthu form = new frmBaocaodoanhthu();
             form.Show();
         }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Classes.Functions.Close();
+            this.Close();
+        }
+
+        private void báoCáoLợiNhuậnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaocaoloinhuan form = new frmBaocaoloinhuan();
+            form.Show();
+        }
     }
 }
