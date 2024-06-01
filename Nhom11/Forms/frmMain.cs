@@ -28,6 +28,13 @@ namespace Nhom11
             form.Show();
         }
 
+        private void hóaĐơnNhậnBàiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Forms.frmNhanBai f = new Forms.frmNhanBai();
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.Show();
+        }
+
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Classes.Functions.Close();

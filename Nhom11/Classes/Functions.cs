@@ -13,8 +13,8 @@ namespace Nhom11.Classes
         public static string connstring;
         public static void Connect()
         {
-            //connstring = "Data Source=NGOCMINHS-DEsKT\\SQLEXPRESS;Initial Catalog=Nhom11;Integrated Security=True;"; //constring của ngọc minh laptop
-            connstring = "Data Source=DESKTOP-297FAMM\\SQLEXPRESS;Initial Catalog=Nhom11;Integrated Security=True;"; //connstring của ngọc minh pc
+            connstring = "Data Source=DESKTOP-297FAMM\\SQLEXPRESS;Initial Catalog=Nhom11;Integrated Security=True;";
+            //connstring = "Data Source=(localdb)\\ProjectModels;Initial Catalog=csdl;Integrated Security=True;Connect Timeout=30;Encrypt=False"; //connstring của bao pc
             conn = new SqlConnection(connstring);
             conn.Open();
         }
@@ -239,6 +239,20 @@ namespace Nhom11.Classes
             }
 
             return result.ToString().Trim();
+        }
+
+        public static string GetFieldValues(string sql)
+        {
+            string ma = "";
+            SqlCommand cmd = new SqlCommand(sql, Functions.conn);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ma = reader.GetValue(0).ToString();
+            }
+            reader.Close();
+            return ma;
         }
     }
 }
