@@ -51,6 +51,7 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnBoqua = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.btnTimkiem = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +91,7 @@
             // 
             // txtNhanbai
             // 
-            this.txtNhanbai.Location = new System.Drawing.Point(260, 27);
+            this.txtNhanbai.Location = new System.Drawing.Point(280, 21);
             this.txtNhanbai.Name = "txtNhanbai";
             this.txtNhanbai.Size = new System.Drawing.Size(80, 22);
             this.txtNhanbai.TabIndex = 4;
@@ -192,7 +193,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(174, 30);
+            this.label8.Location = new System.Drawing.Point(194, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 16);
             this.label8.TabIndex = 0;
@@ -220,7 +221,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(163, 488);
+            this.btnThem.Location = new System.Drawing.Point(226, 486);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 24);
             this.btnThem.TabIndex = 3;
@@ -230,7 +231,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(257, 488);
+            this.btnSua.Location = new System.Drawing.Point(319, 486);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 24);
             this.btnSua.TabIndex = 3;
@@ -240,7 +241,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(342, 488);
+            this.btnXoa.Location = new System.Drawing.Point(407, 486);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 24);
             this.btnXoa.TabIndex = 3;
@@ -250,7 +251,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(439, 488);
+            this.btnLuu.Location = new System.Drawing.Point(498, 486);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 24);
             this.btnLuu.TabIndex = 3;
@@ -260,7 +261,7 @@
             // 
             // btnBoqua
             // 
-            this.btnBoqua.Location = new System.Drawing.Point(539, 488);
+            this.btnBoqua.Location = new System.Drawing.Point(590, 486);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.Size = new System.Drawing.Size(75, 24);
             this.btnBoqua.TabIndex = 3;
@@ -270,7 +271,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(634, 488);
+            this.btnThoat.Location = new System.Drawing.Point(680, 486);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 24);
             this.btnThoat.TabIndex = 3;
@@ -278,11 +279,22 @@
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // btnTimkiem
+            // 
+            this.btnTimkiem.Location = new System.Drawing.Point(122, 486);
+            this.btnTimkiem.Name = "btnTimkiem";
+            this.btnTimkiem.Size = new System.Drawing.Size(81, 24);
+            this.btnTimkiem.TabIndex = 4;
+            this.btnTimkiem.Text = "Tìm kiếm";
+            this.btnTimkiem.UseVisualStyleBackColor = true;
+            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
+            // 
             // frmNhanBai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 535);
+            this.Controls.Add(this.btnTimkiem);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnBoqua);
             this.Controls.Add(this.btnLuu);
@@ -328,5 +340,6 @@
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnBoqua;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnTimkiem;
     }
 }

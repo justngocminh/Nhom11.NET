@@ -69,6 +69,12 @@ namespace Nhom11.Forms
                 txtNhanbai.Focus();
                 return;
             }
+
+            DisplayData();
+        }
+
+        private void DisplayData()
+        {
             if (table.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -93,7 +99,7 @@ namespace Nhom11.Forms
 
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
-            btnBoqua.Enabled = false;
+            btnBoqua.Enabled = true;
         }
 
         private void cbMatacgia_SelectedIndexChanged(object sender, EventArgs e)
@@ -340,6 +346,37 @@ namespace Nhom11.Forms
             this.Close();
         }
 
+        private void btnTimkiem_Click(object sender, EventArgs e)
+        {
+            string sql = "SELECT * FROM tblNhanbai WHERE 1=1";
 
+            if (!string.IsNullOrEmpty(cbMatacgia.Text))
+            {
+                sql += " AND Matacgia = N'" + cbMatacgia.Text + "'";
+            }
+
+            if (!string.IsNullOrEmpty(cbMabaibao.Text))
+            {
+                sql += " AND Mabaibao = N'" + cbMabaibao.Text + "'";
+            }
+
+            if (!string.IsNullOrEmpty(cbMaNV.Text))
+            {
+                sql += " AND Manhanvien = N'" + cbMaNV.Text + "'";
+            }
+
+            table = Classes.Functions.GetDataToTable(sql);
+            if (table.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy bản ghi nào phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                dataGridView1.DataSource = table;
+                DisplayData();
+            }
+
+            txtNhanbai.Enabled = false;
+        }
     }
 }
