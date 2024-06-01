@@ -239,6 +239,20 @@ namespace Nhom11.Classes
 
             return result.ToString().Trim();
         }
+
+        public static string GetFieldValues(string sql)
+        {
+            string ma = "";
+            SqlCommand cmd = new SqlCommand(sql, Functions.conn);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ma = reader.GetValue(0).ToString();
+            }
+            reader.Close();
+            return ma;
+        }
     }
 }
 

@@ -27,5 +27,12 @@ namespace Nhom11
             frmBaocaodoanhthu form = new frmBaocaodoanhthu();
             form.Show();
         }
+
+        private void hóaĐơnNhậnBàiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Forms.frmNhanBai f = new Forms.frmNhanBai();
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.Show();
+        }
     }
 }
