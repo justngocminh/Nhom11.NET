@@ -376,7 +376,7 @@ namespace Nhom11.Forms
                 DisplayData();
             }
 
-            txtNhanbai.Enabled = false;
+            
         }
     }
 }
