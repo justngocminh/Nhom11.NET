@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -76,6 +82,12 @@
     <Compile Include="Forms\frmPhongban.Designer.cs">
       <DependentUpon>frmPhongban.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Hopdongnhanbai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Hopdongnhanbai.Designer.cs">
+      <DependentUpon>Hopdongnhanbai.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frmBaocaodoanhthu.resx">
@@ -89,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPhongban.resx">
       <DependentUpon>frmPhongban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hopdongnhanbai.resx">
+      <DependentUpon>Hopdongnhanbai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

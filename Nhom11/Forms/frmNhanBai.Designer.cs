@@ -52,6 +52,7 @@
             this.btnBoqua = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnTimkiem = new System.Windows.Forms.Button();
+            this.btnChitiet = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -221,7 +222,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(226, 486);
+            this.btnThem.Location = new System.Drawing.Point(192, 486);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 24);
             this.btnThem.TabIndex = 3;
@@ -231,7 +232,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(319, 486);
+            this.btnSua.Location = new System.Drawing.Point(285, 486);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 24);
             this.btnSua.TabIndex = 3;
@@ -241,7 +242,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(407, 486);
+            this.btnXoa.Location = new System.Drawing.Point(373, 486);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 24);
             this.btnXoa.TabIndex = 3;
@@ -251,7 +252,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(498, 486);
+            this.btnLuu.Location = new System.Drawing.Point(464, 486);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 24);
             this.btnLuu.TabIndex = 3;
@@ -261,7 +262,7 @@
             // 
             // btnBoqua
             // 
-            this.btnBoqua.Location = new System.Drawing.Point(590, 486);
+            this.btnBoqua.Location = new System.Drawing.Point(556, 486);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.Size = new System.Drawing.Size(75, 24);
             this.btnBoqua.TabIndex = 3;
@@ -271,7 +272,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(680, 486);
+            this.btnThoat.Location = new System.Drawing.Point(741, 486);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 24);
             this.btnThoat.TabIndex = 3;
@@ -281,7 +282,7 @@
             // 
             // btnTimkiem
             // 
-            this.btnTimkiem.Location = new System.Drawing.Point(122, 486);
+            this.btnTimkiem.Location = new System.Drawing.Point(88, 486);
             this.btnTimkiem.Name = "btnTimkiem";
             this.btnTimkiem.Size = new System.Drawing.Size(81, 24);
             this.btnTimkiem.TabIndex = 4;
@@ -289,11 +290,22 @@
             this.btnTimkiem.UseVisualStyleBackColor = true;
             this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
             // 
+            // btnChitiet
+            // 
+            this.btnChitiet.Location = new System.Drawing.Point(649, 486);
+            this.btnChitiet.Name = "btnChitiet";
+            this.btnChitiet.Size = new System.Drawing.Size(75, 24);
+            this.btnChitiet.TabIndex = 5;
+            this.btnChitiet.Text = "Chi tiết";
+            this.btnChitiet.UseVisualStyleBackColor = true;
+            this.btnChitiet.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmNhanBai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 535);
+            this.Controls.Add(this.btnChitiet);
             this.Controls.Add(this.btnTimkiem);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnBoqua);
@@ -341,5 +353,6 @@
         private System.Windows.Forms.Button btnBoqua;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnTimkiem;
+        private System.Windows.Forms.Button btnChitiet;
     }
 }

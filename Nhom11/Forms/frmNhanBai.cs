@@ -27,6 +27,7 @@ namespace Nhom11.Forms
             txtNV.Enabled = false;
             btnBoqua.Enabled = false;
             btnLuu.Enabled = false;
+            btnChitiet.Enabled = false;
             Functions.FillComboBox("SELECT Matacgia FROM tblTacgia", cbMatacgia, "Matacgia", "Matacgia");
             cbMatacgia.SelectedIndex = -1;
 
@@ -71,6 +72,7 @@ namespace Nhom11.Forms
             }
 
             DisplayData();
+            btnChitiet.Enabled = true;
         }
 
         private void DisplayData()
@@ -154,6 +156,7 @@ namespace Nhom11.Forms
             txtNV.Text = "";
             txtBaibao.Text = "";
             txtTacgia.Text = "";
+            btnChitiet.Enabled = false;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -377,6 +380,22 @@ namespace Nhom11.Forms
             }
 
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                // Lấy giá trị Manhanbai từ dòng hiện tại trong dataGridView1
+                string manhanbai = dataGridView1.CurrentRow.Cells["Manhanbai"].Value.ToString();
+                Hopdongnhanbai frm = new Hopdongnhanbai();
+                frm.ManhanbaiFromNhanBai = manhanbai;
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
