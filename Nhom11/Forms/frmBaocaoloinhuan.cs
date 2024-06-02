@@ -47,6 +47,7 @@ namespace Nhom11.Forms
                 return;
             }
             lbTongloinhuanso.Text = "Tổng lợi nhuận bằng số: " + ColumnTotal(dataGridView1, 4) + " đồng";
+            lbTongloinhuanchu.Text = "Tổng lợi nhuận bằng chữ: " + Classes.Functions.ConvertNumberToWords((long)ColumnTotal(dataGridView1, 4)) + " đồng";
         }
 
         // Tải biểu đồ
@@ -91,6 +92,7 @@ namespace Nhom11.Forms
             txtDenngay.Enabled = false;
             Load_DataGridView(sql);
             SetupStackedColumnChart(dataGridView1, chart1);
+
         }
 
         // Không cho điền chữ cái vào các ô tiền

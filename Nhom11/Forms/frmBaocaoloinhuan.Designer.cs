@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnXuat = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtTongloinhuanso = new System.Windows.Forms.Label();
+            this.lbTongloinhuanchu = new System.Windows.Forms.Label();
             this.lbTongloinhuanso = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -103,7 +103,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txtTongloinhuanso);
+            this.groupBox3.Controls.Add(this.lbTongloinhuanchu);
             this.groupBox3.Controls.Add(this.lbTongloinhuanso);
             this.groupBox3.Location = new System.Drawing.Point(28, 468);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
@@ -114,14 +114,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin báo cáo";
             // 
-            // txtTongloinhuanso
+            // lbTongloinhuanchu
             // 
-            this.txtTongloinhuanso.AutoSize = true;
-            this.txtTongloinhuanso.Location = new System.Drawing.Point(29, 47);
-            this.txtTongloinhuanso.Name = "txtTongloinhuanso";
-            this.txtTongloinhuanso.Size = new System.Drawing.Size(129, 13);
-            this.txtTongloinhuanso.TabIndex = 50;
-            this.txtTongloinhuanso.Text = "Tổng lợi nhuận bằng chữ:";
+            this.lbTongloinhuanchu.AutoSize = true;
+            this.lbTongloinhuanchu.Location = new System.Drawing.Point(29, 47);
+            this.lbTongloinhuanchu.Name = "lbTongloinhuanchu";
+            this.lbTongloinhuanchu.Size = new System.Drawing.Size(129, 13);
+            this.lbTongloinhuanchu.TabIndex = 50;
+            this.lbTongloinhuanchu.Text = "Tổng lợi nhuận bằng chữ:";
             // 
             // lbTongloinhuanso
             // 
@@ -207,18 +207,18 @@
             // 
             // chart1
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chart1.Legends.Add(legend9);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(761, 310);
             this.chart1.Margin = new System.Windows.Forms.Padding(1);
             this.chart1.Name = "chart1";
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chart1.Series.Add(series9);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(358, 232);
             this.chart1.TabIndex = 105;
             this.chart1.Text = "chart1";
@@ -519,7 +519,7 @@
         private System.Windows.Forms.Button btnXuat;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label txtTongloinhuanso;
+        private System.Windows.Forms.Label lbTongloinhuanchu;
         private System.Windows.Forms.Label lbTongloinhuanso;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
