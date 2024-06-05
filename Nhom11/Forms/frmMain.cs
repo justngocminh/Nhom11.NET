@@ -46,5 +46,17 @@ namespace Nhom11
             frmBaocaoloinhuan form = new frmBaocaoloinhuan();
             form.Show();
         }
+
+        private void bàiQuảngCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmKhachhang form = new frmKhachhang();
+            form.Show();
+        }
+
+        private void quảngCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmQuangcao form = new frmQuangcao();
+            form.Show();
+        }
     }
 }

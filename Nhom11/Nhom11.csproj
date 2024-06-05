@@ -70,6 +70,12 @@
     <Compile Include="Forms\frmBaocaoloinhuan.Designer.cs">
       <DependentUpon>frmBaocaoloinhuan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmKhachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmKhachhang.Designer.cs">
+      <DependentUpon>frmKhachhang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,18 @@
     <Compile Include="Forms\frmPhongban.Designer.cs">
       <DependentUpon>frmPhongban.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmQuangcao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmQuangcao.Designer.cs">
+      <DependentUpon>frmQuangcao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTimkiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTimkiem.Designer.cs">
+      <DependentUpon>frmTimkiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Hopdongnhanbai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +120,9 @@
     <EmbeddedResource Include="Forms\frmBaocaoloinhuan.resx">
       <DependentUpon>frmBaocaoloinhuan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmKhachhang.resx">
+      <DependentUpon>frmKhachhang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +131,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPhongban.resx">
       <DependentUpon>frmPhongban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmQuangcao.resx">
+      <DependentUpon>frmQuangcao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTimkiem.resx">
+      <DependentUpon>frmTimkiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Hopdongnhanbai.resx">
       <DependentUpon>Hopdongnhanbai.cs</DependentUpon>
