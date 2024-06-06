@@ -58,5 +58,15 @@ namespace Nhom11
             frmQuangcao form = new frmQuangcao();
             form.Show();
         }
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNhanvien form = new frmNhanvien();
+            form.Show();
+        }
+        private void bàiBáoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmBaibao form = new frmBaibao();
+            form.Show();
+        }
     }
 }
