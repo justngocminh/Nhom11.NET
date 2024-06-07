@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnXuat = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -80,6 +80,7 @@
             // 
             // btnXuat
             // 
+            this.btnXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXuat.Location = new System.Drawing.Point(475, 157);
             this.btnXuat.Margin = new System.Windows.Forms.Padding(1);
             this.btnXuat.Name = "btnXuat";
@@ -91,6 +92,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 25);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -103,6 +107,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.lbTongloinhuanchu);
             this.groupBox3.Controls.Add(this.lbTongloinhuanso);
             this.groupBox3.Location = new System.Drawing.Point(28, 468);
@@ -116,6 +122,7 @@
             // 
             // lbTongloinhuanchu
             // 
+            this.lbTongloinhuanchu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbTongloinhuanchu.AutoSize = true;
             this.lbTongloinhuanchu.Location = new System.Drawing.Point(29, 47);
             this.lbTongloinhuanchu.Name = "lbTongloinhuanchu";
@@ -125,6 +132,7 @@
             // 
             // lbTongloinhuanso
             // 
+            this.lbTongloinhuanso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbTongloinhuanso.AutoSize = true;
             this.lbTongloinhuanso.Location = new System.Drawing.Point(29, 21);
             this.lbTongloinhuanso.Name = "lbTongloinhuanso";
@@ -134,6 +142,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(593, 69);
             this.label6.Name = "label6";
@@ -152,6 +161,8 @@
             // 
             // txtMahopdong
             // 
+            this.txtMahopdong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMahopdong.Location = new System.Drawing.Point(107, 23);
             this.txtMahopdong.Margin = new System.Windows.Forms.Padding(2);
             this.txtMahopdong.Name = "txtMahopdong";
@@ -161,6 +172,7 @@
             // 
             // txtDenngay
             // 
+            this.txtDenngay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDenngay.Location = new System.Drawing.Point(650, 66);
             this.txtDenngay.Margin = new System.Windows.Forms.Padding(1);
             this.txtDenngay.Mask = "00/00/0000";
@@ -172,6 +184,7 @@
             // 
             // rdoTheongay
             // 
+            this.rdoTheongay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoTheongay.AutoSize = true;
             this.rdoTheongay.Location = new System.Drawing.Point(359, 26);
             this.rdoTheongay.Margin = new System.Windows.Forms.Padding(2);
@@ -185,6 +198,7 @@
             // 
             // rdoTrongkhoang
             // 
+            this.rdoTrongkhoang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoTrongkhoang.AutoSize = true;
             this.rdoTrongkhoang.Location = new System.Drawing.Point(359, 69);
             this.rdoTrongkhoang.Margin = new System.Windows.Forms.Padding(2);
@@ -198,6 +212,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(456, 71);
             this.label1.Name = "label1";
@@ -207,24 +222,26 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(761, 310);
             this.chart1.Margin = new System.Windows.Forms.Padding(1);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(358, 232);
             this.chart1.TabIndex = 105;
             this.chart1.Text = "chart1";
             // 
             // btnDong
             // 
+            this.btnDong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDong.Location = new System.Drawing.Point(597, 157);
             this.btnDong.Margin = new System.Windows.Forms.Padding(1);
             this.btnDong.Name = "btnDong";
@@ -236,6 +253,7 @@
             // 
             // txtTheongay
             // 
+            this.txtTheongay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTheongay.Location = new System.Drawing.Point(444, 23);
             this.txtTheongay.Margin = new System.Windows.Forms.Padding(1);
             this.txtTheongay.Mask = "00/00/0000";
@@ -247,6 +265,7 @@
             // 
             // btnTracuu
             // 
+            this.btnTracuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTracuu.Location = new System.Drawing.Point(625, 225);
             this.btnTracuu.Margin = new System.Windows.Forms.Padding(1);
             this.btnTracuu.Name = "btnTracuu";
@@ -258,6 +277,7 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHuy.Location = new System.Drawing.Point(509, 225);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(1);
             this.btnHuy.Name = "btnHuy";
@@ -269,6 +289,7 @@
             // 
             // txtTungay
             // 
+            this.txtTungay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTungay.Location = new System.Drawing.Point(506, 66);
             this.txtTungay.Margin = new System.Windows.Forms.Padding(1);
             this.txtTungay.Mask = "00/00/0000";
@@ -279,6 +300,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(872, 288);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -289,6 +311,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.btnXuat);
             this.groupBox2.Controls.Add(this.btnDong);
             this.groupBox2.Controls.Add(this.dataGridView1);
@@ -306,7 +331,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(476, 9);
+            this.label4.Location = new System.Drawing.Point(450, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(292, 37);
             this.label4.TabIndex = 107;
@@ -314,6 +339,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
@@ -349,6 +376,7 @@
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(213, 101);
             this.label14.Name = "label14";
@@ -358,6 +386,7 @@
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(213, 77);
             this.label13.Name = "label13";
@@ -367,6 +396,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(213, 52);
             this.label12.Name = "label12";
@@ -403,6 +433,7 @@
             // 
             // txtLoinhuan2
             // 
+            this.txtLoinhuan2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLoinhuan2.Location = new System.Drawing.Point(245, 98);
             this.txtLoinhuan2.Margin = new System.Windows.Forms.Padding(2);
             this.txtLoinhuan2.Name = "txtLoinhuan2";
@@ -413,6 +444,8 @@
             // 
             // txtLoinhuan1
             // 
+            this.txtLoinhuan1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLoinhuan1.Location = new System.Drawing.Point(132, 98);
             this.txtLoinhuan1.Margin = new System.Windows.Forms.Padding(2);
             this.txtLoinhuan1.Name = "txtLoinhuan1";
@@ -422,6 +455,7 @@
             // 
             // txtNhuanbut2
             // 
+            this.txtNhuanbut2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNhuanbut2.Location = new System.Drawing.Point(245, 73);
             this.txtNhuanbut2.Margin = new System.Windows.Forms.Padding(2);
             this.txtNhuanbut2.Name = "txtNhuanbut2";
@@ -432,6 +466,8 @@
             // 
             // txtNhuanbut1
             // 
+            this.txtNhuanbut1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNhuanbut1.Location = new System.Drawing.Point(132, 73);
             this.txtNhuanbut1.Margin = new System.Windows.Forms.Padding(2);
             this.txtNhuanbut1.Name = "txtNhuanbut1";
@@ -441,6 +477,7 @@
             // 
             // txtDoanhthu2
             // 
+            this.txtDoanhthu2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDoanhthu2.Location = new System.Drawing.Point(245, 49);
             this.txtDoanhthu2.Margin = new System.Windows.Forms.Padding(2);
             this.txtDoanhthu2.Name = "txtDoanhthu2";
@@ -478,6 +515,8 @@
             // 
             // txtDoanhthu1
             // 
+            this.txtDoanhthu1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDoanhthu1.Location = new System.Drawing.Point(132, 49);
             this.txtDoanhthu1.Margin = new System.Windows.Forms.Padding(2);
             this.txtDoanhthu1.Name = "txtDoanhthu1";

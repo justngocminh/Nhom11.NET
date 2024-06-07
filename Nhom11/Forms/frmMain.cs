@@ -1,5 +1,6 @@
 ﻿using Nhom11.Forms;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Nhom11
@@ -9,6 +10,8 @@ namespace Nhom11
         public frmMain()
         {
             InitializeComponent();
+            Size = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -34,13 +37,6 @@ namespace Nhom11
             f.StartPosition = FormStartPosition.CenterScreen;
             f.Show();
         }
-
-        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Classes.Functions.Close();
-            this.Close();
-        }
-
         private void báoCáoLợiNhuậnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmBaocaoloinhuan form = new frmBaocaoloinhuan();
@@ -63,15 +59,15 @@ namespace Nhom11
             frmNhanvien form = new frmNhanvien();
             form.Show();
         }
-        private void bàiBáoToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmBaibao form = new frmBaibao();
-            form.Show();
-        }
-
         private void tácGiảToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmTacgia form = new frmTacgia();
+            form.Show();
+        }
+
+        private void hóaĐơnNhậnBàiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaibao form = new frmBaibao();
             form.Show();
         }
     }
