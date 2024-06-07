@@ -61,7 +61,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(249, 20);
+            this.label1.Location = new System.Drawing.Point(280, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(382, 46);
             this.label1.TabIndex = 0;
@@ -83,7 +83,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(122, 83);
+            this.groupBox1.Location = new System.Drawing.Point(153, 101);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(633, 214);
             this.groupBox1.TabIndex = 1;
@@ -212,7 +212,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(122, 303);
+            this.dataGridView1.Location = new System.Drawing.Point(153, 321);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -222,7 +222,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(192, 486);
+            this.btnThem.Location = new System.Drawing.Point(223, 504);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 24);
             this.btnThem.TabIndex = 3;
@@ -232,7 +232,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(285, 486);
+            this.btnSua.Location = new System.Drawing.Point(316, 504);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 24);
             this.btnSua.TabIndex = 3;
@@ -242,7 +242,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(373, 486);
+            this.btnXoa.Location = new System.Drawing.Point(404, 504);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 24);
             this.btnXoa.TabIndex = 3;
@@ -252,7 +252,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(464, 486);
+            this.btnLuu.Location = new System.Drawing.Point(495, 504);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 24);
             this.btnLuu.TabIndex = 3;
@@ -262,7 +262,7 @@
             // 
             // btnBoqua
             // 
-            this.btnBoqua.Location = new System.Drawing.Point(556, 486);
+            this.btnBoqua.Location = new System.Drawing.Point(587, 504);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.Size = new System.Drawing.Size(75, 24);
             this.btnBoqua.TabIndex = 3;
@@ -272,7 +272,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(741, 486);
+            this.btnThoat.Location = new System.Drawing.Point(772, 504);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 24);
             this.btnThoat.TabIndex = 3;
@@ -282,7 +282,7 @@
             // 
             // btnTimkiem
             // 
-            this.btnTimkiem.Location = new System.Drawing.Point(88, 486);
+            this.btnTimkiem.Location = new System.Drawing.Point(124, 504);
             this.btnTimkiem.Name = "btnTimkiem";
             this.btnTimkiem.Size = new System.Drawing.Size(81, 24);
             this.btnTimkiem.TabIndex = 4;
@@ -292,7 +292,7 @@
             // 
             // btnChitiet
             // 
-            this.btnChitiet.Location = new System.Drawing.Point(649, 486);
+            this.btnChitiet.Location = new System.Drawing.Point(680, 504);
             this.btnChitiet.Name = "btnChitiet";
             this.btnChitiet.Size = new System.Drawing.Size(75, 24);
             this.btnChitiet.TabIndex = 5;
@@ -304,7 +304,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 535);
+            this.ClientSize = new System.Drawing.Size(962, 590);
             this.Controls.Add(this.btnChitiet);
             this.Controls.Add(this.btnTimkiem);
             this.Controls.Add(this.btnThoat);

@@ -19,13 +19,13 @@ namespace Nhom11.Forms
             InitializeComponent();
         }
 
+
+ 
         private void frmNhanBai_Load(object sender, EventArgs e)
         {
-            txtNhanbai.Enabled = false;
             txtTacgia.Enabled = false;
             txtBaibao.Enabled = false;
             txtNV.Enabled = false;
-            btnBoqua.Enabled = false;
             btnLuu.Enabled = false;
             btnChitiet.Enabled = false;
             Functions.FillComboBox("SELECT Matacgia FROM tblTacgia", cbMatacgia, "Matacgia", "Matacgia");
@@ -157,6 +157,7 @@ namespace Nhom11.Forms
             txtBaibao.Text = "";
             txtTacgia.Text = "";
             btnChitiet.Enabled = false;
+            Load_DataGridView();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -227,9 +228,7 @@ namespace Nhom11.Forms
               "WHERE MaNhanbai = N'" + txtNhanbai.Text.Trim() + "'";
 
             Classes.Functions.RunSql(sql);
-            Load_DataGridView();
             ResetValues();
-            btnBoqua.Enabled = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -337,12 +336,9 @@ namespace Nhom11.Forms
         private void btnBoqua_Click(object sender, EventArgs e)
         {
             ResetValues();
-            btnBoqua.Enabled = false;
             btnThem.Enabled = true;
             btnXoa.Enabled = true;
             btnSua.Enabled = false;
-            txtNhanbai.Enabled = false;
-            Load_DataGridView();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -353,6 +349,10 @@ namespace Nhom11.Forms
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
             string sql = "SELECT * FROM tblNhanbai WHERE 1=1";
+            if (!string.IsNullOrEmpty(txtNhanbai.Text))
+            {
+                sql += " AND Manhanbai = N'" + txtNhanbai.Text + "'";
+            }
 
             if (!string.IsNullOrEmpty(cbMatacgia.Text))
             {
