@@ -342,6 +342,7 @@ namespace Nhom11.Forms
             btnXoa.Enabled = true;
             btnSua.Enabled = false;
             txtNhanbai.Enabled = false;
+            Load_DataGridView();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
