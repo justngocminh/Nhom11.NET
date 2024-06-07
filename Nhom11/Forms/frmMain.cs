@@ -68,5 +68,11 @@ namespace Nhom11
             frmBaibao form = new frmBaibao();
             form.Show();
         }
+
+        private void tácGiảToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTacgia form = new frmTacgia();
+            form.Show();
+        }
     }
 }
