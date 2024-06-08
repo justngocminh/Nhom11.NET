@@ -1,18 +1,10 @@
-﻿using Nhom11.Classes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Printing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using iTextSharp.text;
+﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Nhom11.Classes;
+using System;
+using System.Data;
+using System.IO;
+using System.Windows.Forms;
 
 
 namespace Nhom11.Forms
@@ -79,7 +71,7 @@ namespace Nhom11.Forms
             AddInfoParagraph(document, "Mã bài báo: " + txtMabaibao.Text, font);
             AddInfoParagraph(document, "Tên bài báo: " + txtBaibao.Text, font);
             AddInfoParagraph(document, "Nhuận bút: " + txtNhuanbut.Text, font);
-            AddInfoParagraph(document, "Ngày nhận bài: " + txtNgay.Text, font);                      
+            AddInfoParagraph(document, "Ngày nhận bài: " + txtNgay.Text, font);
 
             // Thêm chữ ký nhân viên và tác giả
             Paragraph chuKyNhanVien = new Paragraph("Chữ ký nhân viên: ___________________", font);
@@ -112,4 +104,4 @@ namespace Nhom11.Forms
             document.Add(paragraph);
         }
     }
-    }
+}
