@@ -261,9 +261,9 @@ namespace Nhom11.Forms
             mskNgayBD.Enabled = true;
             mskNgayKT.Enabled = true;
             mskNgayKK.Enabled = true;
+            txtMaHD.Enabled = true;
             txtTongtien.Enabled = true;
             ResetValues();
-            txtMaHD.Text = Functions.CreateKey("HD");
             Load_DataGridViewHD();
         }
 
