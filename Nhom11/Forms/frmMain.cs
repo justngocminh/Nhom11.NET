@@ -70,5 +70,11 @@ namespace Nhom11
             frmBaibao form = new frmBaibao();
             form.Show();
         }
+
+        // Ngắt kết nối đến cơ sỏ dữ liệu khi form đ
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Classes.Functions.Close();
+        }
     }
 }

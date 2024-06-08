@@ -113,7 +113,7 @@
             // nhânViênToolStripMenuItem
             // 
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nhânViênToolStripMenuItem.Text = "Nhân viên";
             this.nhânViênToolStripMenuItem.Click += new System.EventHandler(this.nhânViênToolStripMenuItem_Click);
             // 
@@ -130,21 +130,21 @@
             // tácGiảToolStripMenuItem
             // 
             this.tácGiảToolStripMenuItem.Name = "tácGiảToolStripMenuItem";
-            this.tácGiảToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.tácGiảToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tácGiảToolStripMenuItem.Text = "Tác giả";
             this.tácGiảToolStripMenuItem.Click += new System.EventHandler(this.tácGiảToolStripMenuItem_Click);
             // 
             // bàiBaoToolStripMenuItem
             // 
             this.bàiBaoToolStripMenuItem.Name = "bàiBaoToolStripMenuItem";
-            this.bàiBaoToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.bàiBaoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bàiBaoToolStripMenuItem.Text = "Bài báo";
             this.bàiBaoToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnNhậnBàiToolStripMenuItem_Click);
             // 
             // hóaĐơnNhậnBàiToolStripMenuItem1
             // 
             this.hóaĐơnNhậnBàiToolStripMenuItem1.Name = "hóaĐơnNhậnBàiToolStripMenuItem1";
-            this.hóaĐơnNhậnBàiToolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
+            this.hóaĐơnNhậnBàiToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.hóaĐơnNhậnBàiToolStripMenuItem1.Text = "Hợp đồng nhận bài";
             this.hóaĐơnNhậnBàiToolStripMenuItem1.Click += new System.EventHandler(this.hóaĐơnNhậnBàiToolStripMenuItem1_Click);
             // 
@@ -213,6 +213,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Text = "Danh mục chính";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();

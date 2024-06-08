@@ -20,7 +20,6 @@ namespace Nhom11.Classes
             //connstring = "Data Source=(localdb)\\ProjectModels;Initial Catalog=csdl;Integrated Security=True;Connect Timeout=30;Encrypt=False"; //connstring của bao pc
             conn = new SqlConnection(connstring);
             conn.Open();
-            //MessageBox.Show("Ket noi thanh cong");
         }
         public static void Close()
         {
@@ -245,6 +244,7 @@ namespace Nhom11.Classes
             return result.ToString().Trim();
         }
 
+        // Lấy thông tin cho ComboBox
         public static string GetFieldValues(string sql)
         {
             string ma = "";
@@ -258,6 +258,8 @@ namespace Nhom11.Classes
             reader.Close();
             return ma;
         }
+
+        // Xóa bản ghi
         public static void RunSqlDel(string sql)
         {
             SqlCommand cmd = new SqlCommand();
