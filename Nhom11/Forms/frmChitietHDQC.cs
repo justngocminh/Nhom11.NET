@@ -192,7 +192,7 @@ namespace Nhom11.Forms
             btnDong.Enabled = true;
             cboMaQC.Enabled = true;
             ResetValues();
-            txtMaCTHD.Text = Functions.CreateKey("CTHD");
+            txtMaCTHD.Enabled = true;
             Load_DataGridViewCTHD();
         }
 

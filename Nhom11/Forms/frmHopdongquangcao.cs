@@ -267,10 +267,10 @@ namespace Nhom11.Forms
             cboMaKH.Enabled = true;
             mskNgayBD.Enabled = true;
             mskNgayKT.Enabled = true;
-            mskNgayKK.Enabled = true; 
+            mskNgayKK.Enabled = true;
+            txtMaHD.Enabled = true;
             txtTongtien.Enabled = true;
             ResetValues();
-            txtMaHD.Text = Functions.CreateKey("HD");
             Load_DataGridViewHD();
         }
 
