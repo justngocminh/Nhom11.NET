@@ -68,7 +68,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Location = new System.Drawing.Point(0, 57);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1200, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
@@ -85,7 +84,6 @@
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip2.Location = new System.Drawing.Point(0, 33);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip2.Size = new System.Drawing.Size(1200, 24);
             this.menuStrip2.TabIndex = 3;
             this.menuStrip2.Text = "menuStrip2";
@@ -101,7 +99,6 @@
             this.báoCáoToolStripMenuItem});
             this.menuStrip3.Location = new System.Drawing.Point(0, 0);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip3.Size = new System.Drawing.Size(1200, 33);
             this.menuStrip3.TabIndex = 4;
             this.menuStrip3.Text = "menuStrip3";
@@ -159,6 +156,7 @@
             this.quảngCáoToolStripMenuItem,
             this.hợpĐồngQuảngCáoToolStripMenuItem});
             this.quảnLýQuảngCáoToolStripMenuItem.Name = "quảnLýQuảngCáoToolStripMenuItem";
+            this.quảnLýQuảngCáoToolStripMenuItem.ShowShortcutKeys = false;
             this.quảnLýQuảngCáoToolStripMenuItem.Size = new System.Drawing.Size(178, 29);
             this.quảnLýQuảngCáoToolStripMenuItem.Text = "Quản lý quảng cáo";
             // 

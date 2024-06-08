@@ -1,25 +1,18 @@
 ﻿using Nhom11.Classes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Printing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-
+using System.Drawing.Printing;
+using System.Xml.Linq;
 
 namespace Nhom11.Forms
 {
     public partial class Hopdongnhanbai : Form
     {
-        DataTable table;
         public Hopdongnhanbai()
         {
             InitializeComponent();
@@ -58,9 +51,17 @@ namespace Nhom11.Forms
 
             document.Open();
 
-            // Định nghĩa font
-            string fontPath = @"Nhom11/Font/arialuni.ttf"; //Điền lại đường dẫn font trong mục Font 
-            BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            // Định nghĩa font từ tài nguyên
+            string fontResourcePath = "Nhom11.Font.arialuni.ttf";
+            Stream fontStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(fontResourcePath);
+
+            byte[] fontData = new byte[fontStream.Length];
+            fontStream.Read(fontData, 0, (int)fontStream.Length);
+            fontStream.Close();
+
+            string tempFontFile = Path.Combine(Path.GetTempPath(), "arialuni.ttf");
+            File.WriteAllBytes(tempFontFile, fontData);
+            BaseFont baseFont = BaseFont.CreateFont(tempFontFile, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
             iTextSharp.text.Font fontTitle = new iTextSharp.text.Font(baseFont, 16, iTextSharp.text.Font.BOLD);
             iTextSharp.text.Font font = new iTextSharp.text.Font(baseFont, 13);
 
@@ -79,7 +80,7 @@ namespace Nhom11.Forms
             AddInfoParagraph(document, "Mã bài báo: " + txtMabaibao.Text, font);
             AddInfoParagraph(document, "Tên bài báo: " + txtBaibao.Text, font);
             AddInfoParagraph(document, "Nhuận bút: " + txtNhuanbut.Text, font);
-            AddInfoParagraph(document, "Ngày nhận bài: " + txtNgay.Text, font);                      
+            AddInfoParagraph(document, "Ngày nhận bài: " + txtNgay.Text, font);
 
             // Thêm chữ ký nhân viên và tác giả
             Paragraph chuKyNhanVien = new Paragraph("Chữ ký nhân viên: ___________________", font);
@@ -102,6 +103,7 @@ namespace Nhom11.Forms
                 File.WriteAllBytes(saveFileDialog.FileName, memoryStream.ToArray());
                 MessageBox.Show("Xuất file PDF thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
         private void AddInfoParagraph(Document document, string text, iTextSharp.text.Font font)
@@ -112,4 +114,4 @@ namespace Nhom11.Forms
             document.Add(paragraph);
         }
     }
-    }
+}

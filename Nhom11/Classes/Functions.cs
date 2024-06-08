@@ -13,12 +13,12 @@ namespace Nhom11.Classes
         public static string connstring;
         public static void Connect()
         {
-            connstring = "Data Source=DESKTOP-297FAMM\\SQLEXPRESS;Initial Catalog=Nhom11_;Integrated Security=True;";
+            //connstring = "Data Source=DESKTOP-297FAMM\\SQLEXPRESS;Initial Catalog=Nhom11_;Integrated Security=True;";
             //connstring = "Data Source=LAPTOP-7BJDK7AQ\\SQLEXPRESS;Initial Catalog=csdl;Integrated Security=True;Encrypt=False"; //connstring cua bngoc
             //connstring = "Data Source=(localdb)\\ProjectModels;Initial Catalog=csdl;Integrated Security=True;Connect Timeout=30;Encrypt=False"; //connstring cua bngoc
             //connstring = "Data Source=DESKTOP-I7VGTSH\\LTNET;Initial Catalog=csdl;Integrated Security=True;Encrypt=False";
             //connstring = "Data Source=(localdb)\\ProjectModels;Initial Catalog=csdl;Integrated Security=True;Connect Timeout=30;Encrypt=False"; //connstring của bao pc
-            connstring = "Data Source=SKRU\\MAY1;Initial Catalog=ngocminh;Integrated Security=True;Encrypt=False"; // connstring cua khanhlinh
+            //connstring = "Data Source=SKRU\\MAY1;Initial Catalog=newcsdl;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
             conn = new SqlConnection(connstring);
             conn.Open();
         }
