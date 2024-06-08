@@ -59,7 +59,7 @@ namespace Nhom11.Forms
             document.Open();
 
             // Định nghĩa font
-            string fontPath = @"C:\Users\giaba\source\repos\Nhom11.NET\Nhom11\Font\ARIALUNI.TTF"; //Điền lại đường dẫn font trong mục Font 
+            string fontPath = @"Nhom11/Font/arialuni.ttf"; //Điền lại đường dẫn font trong mục Font 
             BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
             iTextSharp.text.Font fontTitle = new iTextSharp.text.Font(baseFont, 16, iTextSharp.text.Font.BOLD);
             iTextSharp.text.Font font = new iTextSharp.text.Font(baseFont, 13);
