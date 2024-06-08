@@ -76,5 +76,11 @@ namespace Nhom11
         {
             Classes.Functions.Close();
         }
+
+        private void hợpĐồngQuảngCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHopdongquangcao form = new frmHopdongquangcao();
+            form.Show();  
+        }
     }
 }

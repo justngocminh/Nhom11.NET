@@ -4,14 +4,17 @@ using Nhom11.Classes;
 using System;
 using System.Data;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
-
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.Drawing.Printing;
+using System.Xml.Linq;
 
 namespace Nhom11.Forms
 {
     public partial class Hopdongnhanbai : Form
     {
-        DataTable table;
         public Hopdongnhanbai()
         {
             InitializeComponent();
@@ -50,9 +53,17 @@ namespace Nhom11.Forms
 
             document.Open();
 
-            // Định nghĩa font
-            string fontPath = @"C:\Users\giaba\source\repos\Nhom11.NET\Nhom11\Font\ARIALUNI.TTF"; //Điền lại đường dẫn font trong mục Font 
-            BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            // Định nghĩa font từ tài nguyên
+            string fontResourcePath = "Nhom11.Font.arialuni.ttf";
+            Stream fontStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(fontResourcePath);
+
+            byte[] fontData = new byte[fontStream.Length];
+            fontStream.Read(fontData, 0, (int)fontStream.Length);
+            fontStream.Close();
+
+            string tempFontFile = Path.Combine(Path.GetTempPath(), "arialuni.ttf");
+            File.WriteAllBytes(tempFontFile, fontData);
+            BaseFont baseFont = BaseFont.CreateFont(tempFontFile, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
             iTextSharp.text.Font fontTitle = new iTextSharp.text.Font(baseFont, 16, iTextSharp.text.Font.BOLD);
             iTextSharp.text.Font font = new iTextSharp.text.Font(baseFont, 13);
 
@@ -94,6 +105,7 @@ namespace Nhom11.Forms
                 File.WriteAllBytes(saveFileDialog.FileName, memoryStream.ToArray());
                 MessageBox.Show("Xuất file PDF thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
         private void AddInfoParagraph(Document document, string text, iTextSharp.text.Font font)

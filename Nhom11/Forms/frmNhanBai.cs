@@ -320,6 +320,11 @@ namespace Nhom11.Forms
             // Tiếp tục với việc thêm giá trị Nhuanbut vào câu truy vấn chèn dữ liệu vào bảng tblNhanbai
             sql = "INSERT INTO tblNhanbai (Manhanbai, Matacgia, Mabaibao, Manhanvien, Ngaynhanbai, Nhuanbut) VALUES (N'" + txtNhanbai.Text.Trim() + "', N'" + cbMatacgia.Text.Trim() + "', N'" + cbMabaibao.Text.Trim() + "', N'" + cbMaNV.Text.Trim() + "', N'" + ngaynhanbai + "', N'" + nhuanbut + "')";
 
+            /*
+             / Lấy Dongia từ tblQuangcao dựa vào Maquangcao
+
+            /
+             */
             Classes.Functions.RunSql(sql);
             Load_DataGridView();
             ResetValues();
