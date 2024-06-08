@@ -18,8 +18,6 @@ namespace Nhom11.Forms
         {
             InitializeComponent();
         }
-
-
  
         private void frmNhanBai_Load(object sender, EventArgs e)
         {
