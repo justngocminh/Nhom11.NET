@@ -59,9 +59,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(280, 25);
+            this.label1.Location = new System.Drawing.Point(280, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(459, 55);
             this.label1.TabIndex = 0;
@@ -69,6 +70,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txtNhanbai);
             this.groupBox1.Controls.Add(this.txtBaibao);
             this.groupBox1.Controls.Add(this.txtNV);
@@ -83,8 +86,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(137, 104);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(122, 83);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Size = new System.Drawing.Size(712, 268);
@@ -102,8 +104,7 @@
             // 
             // txtBaibao
             // 
-            this.txtBaibao.Location = new System.Drawing.Point(456, 164);
-            this.txtBaibao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBaibao.Location = new System.Drawing.Point(405, 131);
             this.txtBaibao.Multiline = true;
             this.txtBaibao.Name = "txtBaibao";
             this.txtBaibao.Size = new System.Drawing.Size(229, 95);
@@ -111,16 +112,14 @@
             // 
             // txtNV
             // 
-            this.txtNV.Location = new System.Drawing.Point(456, 120);
-            this.txtNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNV.Location = new System.Drawing.Point(405, 96);
             this.txtNV.Name = "txtNV";
             this.txtNV.Size = new System.Drawing.Size(229, 26);
             this.txtNV.TabIndex = 4;
             // 
             // txtTacgia
             // 
-            this.txtTacgia.Location = new System.Drawing.Point(456, 78);
-            this.txtTacgia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTacgia.Location = new System.Drawing.Point(405, 62);
             this.txtTacgia.Name = "txtTacgia";
             this.txtTacgia.Size = new System.Drawing.Size(229, 26);
             this.txtTacgia.TabIndex = 4;
@@ -220,9 +219,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(137, 379);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(122, 303);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -232,8 +233,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(216, 608);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnThem.Location = new System.Drawing.Point(192, 486);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(84, 30);
             this.btnThem.TabIndex = 3;
@@ -243,8 +243,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(321, 608);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSua.Location = new System.Drawing.Point(285, 486);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(84, 30);
             this.btnSua.TabIndex = 3;
@@ -254,8 +253,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(420, 608);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnXoa.Location = new System.Drawing.Point(373, 486);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(84, 30);
             this.btnXoa.TabIndex = 3;
@@ -265,8 +263,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(522, 608);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLuu.Location = new System.Drawing.Point(464, 486);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(84, 30);
             this.btnLuu.TabIndex = 3;
@@ -276,8 +273,7 @@
             // 
             // btnBoqua
             // 
-            this.btnBoqua.Location = new System.Drawing.Point(626, 608);
-            this.btnBoqua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBoqua.Location = new System.Drawing.Point(556, 486);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.Size = new System.Drawing.Size(84, 30);
             this.btnBoqua.TabIndex = 3;
@@ -287,8 +283,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(834, 608);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnThoat.Location = new System.Drawing.Point(741, 486);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(84, 30);
             this.btnThoat.TabIndex = 3;
@@ -298,8 +293,7 @@
             // 
             // btnTimkiem
             // 
-            this.btnTimkiem.Location = new System.Drawing.Point(99, 608);
-            this.btnTimkiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnTimkiem.Location = new System.Drawing.Point(88, 486);
             this.btnTimkiem.Name = "btnTimkiem";
             this.btnTimkiem.Size = new System.Drawing.Size(91, 30);
             this.btnTimkiem.TabIndex = 4;
@@ -309,8 +303,7 @@
             // 
             // btnChitiet
             // 
-            this.btnChitiet.Location = new System.Drawing.Point(730, 608);
-            this.btnChitiet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnChitiet.Location = new System.Drawing.Point(649, 486);
             this.btnChitiet.Name = "btnChitiet";
             this.btnChitiet.Size = new System.Drawing.Size(84, 30);
             this.btnChitiet.TabIndex = 5;
@@ -322,7 +315,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 669);
+            this.ClientSize = new System.Drawing.Size(907, 535);
             this.Controls.Add(this.btnChitiet);
             this.Controls.Add(this.btnTimkiem);
             this.Controls.Add(this.btnThoat);
@@ -334,7 +327,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmNhanBai";
             this.Text = "frmNhanBai";
             this.Load += new System.EventHandler(this.frmNhanBai_Load);

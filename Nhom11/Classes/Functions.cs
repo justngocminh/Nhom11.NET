@@ -13,13 +13,14 @@ namespace Nhom11.Classes
         public static string connstring;
         public static void Connect()
         {
-            connstring = "Data Source=LAPTOP-7BJDK7AQ\\SQLEXPRESS;Initial Catalog=csdl;Integrated Security=True;Encrypt=False"; //connstring cua bngoc
+            connstring = "Data Source=DESKTOP-297FAMM\\SQLEXPRESS;Initial Catalog=Nhom11_;Integrated Security=True;";
+            //connstring = "Data Source=LAPTOP-7BJDK7AQ\\SQLEXPRESS;Initial Catalog=csdl;Integrated Security=True;Encrypt=False"; //connstring cua bngoc
+            //connstring = "Data Source=(localdb)\\ProjectModels;Initial Catalog=csdl;Integrated Security=True;Connect Timeout=30;Encrypt=False"; //connstring cua bngoc
             //connstring = "Data Source=DESKTOP-I7VGTSH\\LTNET;Initial Catalog=csdl;Integrated Security=True;Encrypt=False";
             //connstring = "Data Source=(localdb)\\ProjectModels;Initial Catalog=csdl;Integrated Security=True;Connect Timeout=30;Encrypt=False"; //connstring của bao pc
             connstring = "Data Source=SKRU\\MAY1;Initial Catalog=ngocminh;Integrated Security=True;Encrypt=False"; // connstring cua khanhlinh
             conn = new SqlConnection(connstring);
             conn.Open();
-            MessageBox.Show("Ket noi thanh cong");
         }
         public static void Close()
         {
@@ -244,6 +245,7 @@ namespace Nhom11.Classes
             return result.ToString().Trim();
         }
 
+        // Lấy thông tin cho ComboBox
         public static string GetFieldValues(string sql)
         {
             string ma = "";
@@ -257,6 +259,8 @@ namespace Nhom11.Classes
             reader.Close();
             return ma;
         }
+
+        // Xóa bản ghi
         public static void RunSqlDel(string sql)
         {
             SqlCommand cmd = new SqlCommand();

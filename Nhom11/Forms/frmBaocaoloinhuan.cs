@@ -180,6 +180,7 @@ namespace Nhom11.Forms
             txtDenngay.Enabled = false;
             txtMahopdong.Focus();
             Load_DataGridView(sql);
+            SetupStackedColumnChart(dataGridView1, chart1);
         }
 
         // Nút tra cứu
@@ -293,7 +294,7 @@ namespace Nhom11.Forms
             }
             if (txtDoanhthu1.Text.Trim() != "" && txtDoanhthu2.Text.Trim() != "")
             {
-                sql += "and (Tongtien between N'" + txtDoanhthu1.Text.Trim() + "' and N'" + txtDoanhthu2.Text.Trim() + "')";
+                sql += "and (Doanhthu between N'" + txtDoanhthu1.Text.Trim() + "' and N'" + txtDoanhthu2.Text.Trim() + "')";
             }
             if (txtNhuanbut1.Text.Trim() != "" && txtNhuanbut2.Text.Trim() != "")
             {
@@ -414,7 +415,7 @@ namespace Nhom11.Forms
                 {
                     worksheet.Cells[2, i + 1] = datagridview.Columns[i].HeaderText;
                     worksheet.Cells[2, i + 1].Font.Bold = true;
-                    worksheet.Cells[2, i + 1].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGreen);
+                    worksheet.Cells[2, i + 1].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
                 }
 
                 for (int i = 0; i < datagridview.Rows.Count; i++)
@@ -426,7 +427,7 @@ namespace Nhom11.Forms
                 }
 
                 int totalRow = datagridview.Rows.Count + 3;
-                worksheet.Cells[totalRow, 4] = "Tổng tiền: ";
+                worksheet.Cells[totalRow, 4] = "Tổng  lợi nhuận: ";
                 worksheet.Cells[totalRow, 4].Font.Bold = true;
                 worksheet.Cells[totalRow, 4].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightYellow);
                 worksheet.Cells[totalRow, 5].Formula = $"=SUM(E3:E{totalRow - 1})";

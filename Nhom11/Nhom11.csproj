@@ -124,6 +124,12 @@
     <Compile Include="Forms\frmQuangcao.Designer.cs">
       <DependentUpon>frmQuangcao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmTacgia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTacgia.Designer.cs">
+      <DependentUpon>frmTacgia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmTimkiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmQuangcao.resx">
       <DependentUpon>frmQuangcao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTacgia.resx">
+      <DependentUpon>frmTacgia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTimkiem.resx">
       <DependentUpon>frmTimkiem.cs</DependentUpon>

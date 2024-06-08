@@ -55,6 +55,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtNgay);
@@ -84,6 +87,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(86, 385);
             this.label9.Name = "label9";
@@ -93,6 +97,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(440, 385);
             this.label1.Name = "label1";
@@ -102,6 +107,7 @@
             // 
             // txtNgay
             // 
+            this.txtNgay.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtNgay.Location = new System.Drawing.Point(309, 340);
             this.txtNgay.Name = "txtNgay";
             this.txtNgay.Size = new System.Drawing.Size(193, 22);
@@ -109,6 +115,8 @@
             // 
             // txtNhuanbut
             // 
+            this.txtNhuanbut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNhuanbut.Location = new System.Drawing.Point(155, 285);
             this.txtNhuanbut.Name = "txtNhuanbut";
             this.txtNhuanbut.Size = new System.Drawing.Size(80, 22);
@@ -144,6 +152,8 @@
             // 
             // txtBaibao
             // 
+            this.txtBaibao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBaibao.Location = new System.Drawing.Point(155, 185);
             this.txtBaibao.Multiline = true;
             this.txtBaibao.Name = "txtBaibao";
@@ -152,6 +162,8 @@
             // 
             // txtNV
             // 
+            this.txtNV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNV.Location = new System.Drawing.Point(405, 96);
             this.txtNV.Name = "txtNV";
             this.txtNV.Size = new System.Drawing.Size(204, 22);
@@ -159,6 +171,8 @@
             // 
             // txtTacgia
             // 
+            this.txtTacgia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTacgia.Location = new System.Drawing.Point(405, 62);
             this.txtTacgia.Name = "txtTacgia";
             this.txtTacgia.Size = new System.Drawing.Size(204, 22);
@@ -193,6 +207,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(201, 342);
             this.label10.Name = "label10";
@@ -247,6 +262,7 @@
             // 
             // btnXuat
             // 
+            this.btnXuat.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnXuat.Location = new System.Drawing.Point(550, 528);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(75, 28);
@@ -262,6 +278,7 @@
             this.ClientSize = new System.Drawing.Size(711, 568);
             this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Hopdongnhanbai";
             this.Text = "Hopdongnhanbai";
             this.Load += new System.EventHandler(this.Hopdongnhanbai_Load);
